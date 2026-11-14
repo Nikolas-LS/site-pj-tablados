@@ -1,3 +1,7 @@
 <template>
-  <SectionsHero />
+  <div>
+    <SectionsHero />
+    <SectionsTrustBar />
+    <SectionsServices />
+  </div>
 </template>

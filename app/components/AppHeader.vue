@@ -33,7 +33,7 @@ const variants: Record<string, VariantType | ((custom: unknown) => VariantType)>
         :aria-label="`${site.name}, página inicial`"
         class="focus-visible:outline-3 outline-primary/25 rounded-md p-1 -ms-1"
       >
-        <AppLogo />
+        <AppLogo class="text-primary" />
       </NuxtLink>
     </template>
 

@@ -40,5 +40,7 @@ useSeoMeta({
     </UMain>
 
     <AppFooter />
+
+    <WhatsappFloat />
   </UApp>
 </template>

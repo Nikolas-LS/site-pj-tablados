@@ -9,5 +9,6 @@
     <SectionsSteps />
     <SectionsTestimonials />
     <SectionsFaq />
+    <SectionsCtaForm />
   </div>
 </template>

@@ -1,15 +1,7 @@
 <script setup lang="ts">
 import { motion } from 'motion-v'
 import type { VariantType } from 'motion-v'
-
-// As âncoras apontam para seções que serão criadas nas próximas etapas
-const items = [
-  { label: 'Início', to: '#inicio' },
-  { label: 'Serviços', to: '#servicos' },
-  { label: 'Projetos', to: '#projetos' },
-  { label: 'Sobre', to: '#sobre' },
-  { label: 'Contato', to: '#contato' }
-]
+import { navItems as items, quoteCta, site } from '~/data/site'
 
 const variants: Record<string, VariantType | ((custom: unknown) => VariantType)> = {
   normal: {
@@ -38,7 +30,7 @@ const variants: Record<string, VariantType | ((custom: unknown) => VariantType)>
     <template #left>
       <NuxtLink
         to="/"
-        aria-label="PJ Tablados, página inicial"
+        :aria-label="`${site.name}, página inicial`"
         class="focus-visible:outline-3 outline-primary/25 rounded-md p-1 -ms-1"
       >
         <AppLogo />
@@ -52,20 +44,21 @@ const variants: Record<string, VariantType | ((custom: unknown) => VariantType)>
 
     <template #right>
       <UButton
-        label="Pedir orçamento"
+        :label="quoteCta.label"
+        :to="quoteCta.to"
         class="hidden lg:flex"
-        to="#contato"
       />
     </template>
 
     <template #toggle="{ open, toggle, ui }">
       <UButton
-        size="sm"
+        size="lg"
         variant="ghost"
         color="neutral"
         square
         :aria-label="open ? 'Fechar menu' : 'Abrir menu'"
         :aria-expanded="open"
+        class="min-h-11 min-w-11"
         :class="ui.toggle({ toggleSide: 'right' })"
         @click="toggle"
       >
@@ -117,14 +110,16 @@ const variants: Record<string, VariantType | ((custom: unknown) => VariantType)>
       <UNavigationMenu
         :items="items"
         orientation="vertical"
+        :ui="{ link: 'min-h-11' }"
       />
 
       <div class="mt-4">
         <UButton
-          label="Pedir orçamento"
-          size="lg"
+          :label="quoteCta.label"
+          :to="quoteCta.to"
+          size="xl"
           block
-          to="#contato"
+          class="min-h-11 justify-center"
         />
       </div>
     </template>

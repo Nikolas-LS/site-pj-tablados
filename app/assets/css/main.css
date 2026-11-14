@@ -40,7 +40,12 @@
   --ui-text: #1c2420;
   --ui-text-muted: #5c6660;
   --ui-border: #d9ddd9;
-  --ui-radius: 0.375rem;
+  /* No Nuxt UI, botões e campos usam 1,5x este valor (rounded-md) e cartões 2x (rounded-lg).
+     Com 0.25rem, botões e campos ficam com 6 px, como no design system. */
+  --ui-radius: 0.25rem;
+
+  /* Largura máxima do conteúdo: 1200 px */
+  --ui-container: 75rem;
 
   /* No modo claro o verde principal usa o tom 700 (mais escuro) */
   --ui-primary: var(--color-musgo-700);

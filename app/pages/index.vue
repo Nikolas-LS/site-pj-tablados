@@ -6,5 +6,8 @@
     <SectionsAbout />
     <SectionsDifferentials />
     <SectionsGallery />
+    <SectionsSteps />
+    <SectionsTestimonials />
+    <SectionsFaq />
   </div>
 </template>

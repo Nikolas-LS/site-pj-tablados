@@ -14,6 +14,12 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/main.css'],
 
+  // A identidade visual é só clara; evita o modo escuro automático do sistema
+  colorMode: {
+    preference: 'light',
+    fallback: 'light'
+  },
+
   content: {
     experimental: {
       sqliteConnector: 'native'

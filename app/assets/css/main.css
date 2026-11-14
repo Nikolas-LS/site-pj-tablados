@@ -1,40 +1,52 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
 
-@source "../../../content/**/*";
-
 @theme static {
-  --font-sans: 'Instrument Sans', -apple-system, sans-serif;
-  --font-mono: 'IBM Plex Mono', monospace;
+  /* Inter e Montserrat são baixadas e otimizadas pelo @nuxt/fonts (já incluso no Nuxt UI) */
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-display: 'Montserrat', 'Inter', sans-serif;
 
-  --color-lime-50: #fbfde8;
-  --color-lime-100: #f5fbb3;
-  --color-lime-200: #eef87e;
-  --color-lime-300: #ddf34c;
-  --color-lime-400: #c8f031;
-  --color-lime-500: #a9d316;
-  --color-lime-600: #84a70e;
-  --color-lime-700: #647f11;
-  --color-lime-800: #4f6413;
-  --color-lime-900: #435514;
-  --color-lime-950: #232f06;
+  /* Verde musgo (principal) - tom 700 = #1F4D3A */
+  /* TODO: trocar o tom 700 pelo verde exato da logo e regenerar a escala */
+  --color-musgo-50: #eef5f1;
+  --color-musgo-100: #e3ede7;
+  --color-musgo-200: #c4dacf;
+  --color-musgo-300: #9bbfad;
+  --color-musgo-400: #6c9d85;
+  --color-musgo-500: #3f7a5f;
+  --color-musgo-600: #2e6049;
+  --color-musgo-700: #1f4d3a;
+  --color-musgo-800: #163828;
+  --color-musgo-900: #0f2a1e;
+  --color-musgo-950: #081a12;
 
-  --animate-shimmer: shimmer 8s ease-in-out infinite alternate;
-
-  @keyframes shimmer {
-    0% {
-      background-position: 0% center;
-    }
-    100% {
-      background-position: 200% center;
-    }
-  }
+  /* Marrom amadeirado (apoio) - tom 600 = #8b5e3c */
+  --color-madeira-50: #f8f3ee;
+  --color-madeira-100: #e8d9c7;
+  --color-madeira-200: #d6bc9f;
+  --color-madeira-300: #c19c75;
+  --color-madeira-400: #a97b52;
+  --color-madeira-500: #96693f;
+  --color-madeira-600: #8b5e3c;
+  --color-madeira-700: #6f4a2f;
+  --color-madeira-800: #553724;
+  --color-madeira-900: #3b2619;
+  --color-madeira-950: #22150e;
 }
 
-.dark {
-  --ui-bg: var(--ui-color-neutral-950);
-  --ui-bg-muted: var(--ui-color-neutral-900);
-  --ui-bg-elevated: var(--ui-color-neutral-900);
-  --ui-bg-accented: var(--ui-color-neutral-800);
-  --ui-border: var(--ui-color-neutral-900);
+:root {
+  --ui-bg: #ffffff;
+  --ui-bg-muted: #f7f5f0;
+  --ui-text: #1c2420;
+  --ui-text-muted: #5c6660;
+  --ui-border: #d9ddd9;
+  --ui-radius: 0.375rem;
+
+  /* No modo claro o verde principal usa o tom 700 (mais escuro) */
+  --ui-primary: var(--color-musgo-700);
+}
+
+/* Títulos com a fonte de destaque */
+h1, h2, h3 {
+  font-family: var(--font-display);
 }

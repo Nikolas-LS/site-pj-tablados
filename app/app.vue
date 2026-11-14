@@ -1,24 +1,28 @@
 <script setup lang="ts">
-const colorMode = useColorMode()
-
-const color = computed(() => colorMode.value === 'dark' ? '#09090b' : 'white')
-
 useHead({
   meta: [
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-    { key: 'theme-color', name: 'theme-color', content: color }
+    { key: 'theme-color', name: 'theme-color', content: 'white' }
   ],
   link: [
     { rel: 'icon', href: '/favicon.ico' }
   ],
   htmlAttrs: {
-    lang: 'en'
+    lang: 'pt-BR'
   }
 })
 
+// TODO: trocar pela descrição real da empresa
+const description = 'TODO: descrição provisória. Tablados e decks de madeira com qualidade e durabilidade.'
+
 useSeoMeta({
-  ogImage: 'https://ui.nuxt.com/assets/templates/nuxt/landing-light.png',
+  title: 'PJ Tablados',
+  ogTitle: 'PJ Tablados',
+  description,
+  ogDescription: description,
+  ogLocale: 'pt_BR',
   twitterCard: 'summary_large_image'
+  // TODO: definir ogImage quando houver a imagem de compartilhamento
 })
 </script>
 

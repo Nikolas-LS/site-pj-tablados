@@ -2,36 +2,14 @@
 import { motion } from 'motion-v'
 import type { VariantType } from 'motion-v'
 
-const nuxtApp = useNuxtApp()
-const activeSection = ref<string>()
-
-const items = computed(() => [
-  {
-    label: 'Features',
-    to: '#features',
-    exactHash: true,
-    active: activeSection.value === 'features'
-  },
-  {
-    label: 'Metrics',
-    to: '#metrics',
-    exactHash: true,
-    active: activeSection.value === 'metrics'
-  }
-])
-
-nuxtApp.hooks.hookOnce('page:loading:end', () => {
-  const observer = new IntersectionObserver((entries) => {
-    const visible = entries.find(e => e.isIntersecting)
-    if (visible) {
-      activeSection.value = visible.target.id
-    } else if (entries.every(e => !e.isIntersecting)) {
-      activeSection.value = undefined
-    }
-  }, { rootMargin: '-50% 0px -50% 0px' })
-
-  document.querySelectorAll('#features, #metrics').forEach(el => observer.observe(el))
-})
+// As âncoras apontam para seções que serão criadas nas próximas etapas
+const items = [
+  { label: 'Início', to: '#inicio' },
+  { label: 'Serviços', to: '#servicos' },
+  { label: 'Projetos', to: '#projetos' },
+  { label: 'Sobre', to: '#sobre' },
+  { label: 'Contato', to: '#contato' }
+]
 
 const variants: Record<string, VariantType | ((custom: unknown) => VariantType)> = {
   normal: {
@@ -60,12 +38,11 @@ const variants: Record<string, VariantType | ((custom: unknown) => VariantType)>
     <template #left>
       <NuxtLink
         to="/"
+        aria-label="PJ Tablados, página inicial"
         class="focus-visible:outline-3 outline-primary/25 rounded-md p-1 -ms-1"
       >
-        <AppLogo class="h-6 w-auto shrink-0" />
+        <AppLogo />
       </NuxtLink>
-
-      <TemplateMenu />
     </template>
 
     <UNavigationMenu
@@ -75,17 +52,9 @@ const variants: Record<string, VariantType | ((custom: unknown) => VariantType)>
 
     <template #right>
       <UButton
-        label="Sign in"
-        color="neutral"
-        variant="ghost"
+        label="Pedir orçamento"
         class="hidden lg:flex"
-      />
-      <UButton
-        label="Get started"
-        color="neutral"
-        class="hidden lg:flex"
-        to="https://ui.nuxt.com"
-        target="_blank"
+        to="#contato"
       />
     </template>
 
@@ -95,7 +64,7 @@ const variants: Record<string, VariantType | ((custom: unknown) => VariantType)>
         variant="ghost"
         color="neutral"
         square
-        :aria-label="open ? 'Close navigation' : 'Open navigation'"
+        :aria-label="open ? 'Fechar menu' : 'Abrir menu'"
         :aria-expanded="open"
         :class="ui.toggle({ toggleSide: 'right' })"
         @click="toggle"
@@ -150,18 +119,12 @@ const variants: Record<string, VariantType | ((custom: unknown) => VariantType)>
         orientation="vertical"
       />
 
-      <div class="mt-4 flex flex-col gap-2">
+      <div class="mt-4">
         <UButton
-          label="Sign in"
-          color="neutral"
-          variant="soft"
+          label="Pedir orçamento"
+          size="lg"
           block
-        />
-        <UButton
-          label="Get started"
-          block
-          to="https://ui.nuxt.com"
-          target="_blank"
+          to="#contato"
         />
       </div>
     </template>

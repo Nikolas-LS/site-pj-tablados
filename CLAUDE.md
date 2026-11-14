@@ -18,15 +18,16 @@ Ainda faltam definir: lista real de serviços, contato (WhatsApp, telefone, e-ma
 - **Ícones:** Iconify, via Nuxt UI.
 - **Formulário:** Web3Forms ou Formspree, sem backend próprio.
 - **Hospedagem:** a definir, Vercel ou Netlify são as opções.
-- **Gerenciador de pacotes:** usar o que já estiver no projeto (verificar o lockfile).
+- **Gerenciador de pacotes:** pnpm (há `pnpm-lock.yaml`). Não usar npm nem yarn.
 
 ## Comandos
 
-- Instalar dependências: `npm install`
-- Rodar em desenvolvimento: `npm run dev`
-- Build de produção: `npm run build`
-- Pré-visualizar o build: `npm run preview`
-- Verificar tipos: `npx nuxi typecheck`
+- Instalar dependências: `pnpm install`
+- Rodar em desenvolvimento: `pnpm dev`
+- Build de produção: `pnpm build`
+- Pré-visualizar o build: `pnpm preview`
+- Verificar tipos: `pnpm typecheck`
+- Lint: `pnpm lint`
 
 Rodar o build e a checagem de tipos antes de dar uma tarefa por concluída.
 

@@ -63,7 +63,7 @@ Todas gratuitas no Google Fonts.
 ### Campos de formulário
 - Borda cinza clara, foco com borda verde musgo.
 - Rótulo acima do campo, mensagem de erro em vermelho terroso.
-- Formulário de orçamento curto: nome, telefone, cidade, tipo de obra e medidas aproximadas.
+- O site não tem formulário de orçamento: o pedido é feito pelo WhatsApp.
 
 ### Cartões
 - Cartão de serviço: foto, título, descrição curta e link.

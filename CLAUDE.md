@@ -4,7 +4,7 @@ Copie o conteúdo abaixo para um arquivo chamado CLAUDE.md na raiz do projeto.
 
 ## Visão geral do projeto
 
-Landing page institucional da **PJ Tablados**, empresa que trabalha com tablados e decks de madeira. O objetivo principal do site é converter visitantes em pedidos de orçamento, por formulário ou WhatsApp. O público é formado por pessoas e empresas que querem contratar a construção ou a manutenção de tablados, decks e pisos externos de madeira, e a maior parte do acesso virá pelo celular.
+Landing page institucional da **PJ Tablados**, empresa que trabalha com tablados e decks de madeira. O objetivo principal do site é converter visitantes em pedidos de orçamento pelo WhatsApp. O público é formado por pessoas e empresas que querem contratar a construção ou a manutenção de tablados, decks e pisos externos de madeira, e a maior parte do acesso virá pelo celular.
 
 Ainda faltam definir: lista real de serviços, contato (WhatsApp, telefone, e-mail), região atendida, fotos reais, depoimentos e números da empresa. Enquanto isso, usar textos de exemplo claramente marcados com `TODO` e nunca inventar dados como telefone, endereço, anos de experiência ou nomes de clientes.
 
@@ -16,7 +16,7 @@ Ainda faltam definir: lista real de serviços, contato (WhatsApp, telefone, e-ma
 - **Linguagem:** TypeScript.
 - **Fontes:** Inter para texto e Montserrat para títulos, carregadas pelo módulo de fontes do Nuxt.
 - **Ícones:** Iconify, via Nuxt UI.
-- **Formulário:** Web3Forms ou Formspree, sem backend próprio.
+- **Pedido de orçamento:** só por WhatsApp (link `wa.me`). Não há formulário nem backend, porque a empresa não usa e-mail.
 - **Hospedagem:** a definir, Vercel ou Netlify são as opções.
 - **Gerenciador de pacotes:** pnpm (há `pnpm-lock.yaml`). Não usar npm nem yarn.
 
@@ -72,18 +72,15 @@ Implementar nesta ordem, uma seção por componente, em `app/components/sections
 8. **Como funciona:** quatro passos em linha do tempo (contato, visita e medição, orçamento, execução).
 9. **Depoimentos:** dois a três, com nome e cidade.
 10. **Perguntas frequentes:** formato sanfona.
-11. **Chamada final com formulário:** fundo verde musgo, campos nome, telefone, cidade, tipo de obra e medidas aproximadas, mais botão de WhatsApp.
+11. **Chamada final:** fundo verde musgo, botão de WhatsApp, endereço com botão "Como chegar" e mapa do Google incorporado.
 12. **Rodapé:** logo, links, contatos, região atendida, horário, redes sociais.
 
 **Elementos fixos:** botão flutuante de WhatsApp no canto inferior direito, visível em todas as seções.
 
-## Formulário e WhatsApp
+## WhatsApp e mapa
 
 - WhatsApp por link direto no formato `https://wa.me/55DDDNUMERO?text=...`, com mensagem pronta como "Olá, quero um orçamento de tablado". O número deve vir de uma variável de ambiente ou de um arquivo de configuração único, nunca espalhado pelo código.
-- Formulário enviado para Web3Forms ou Formspree, com a chave em variável de ambiente.
-- Validação no cliente: nome e telefone obrigatórios, telefone com máscara brasileira.
-- Mostrar estado de carregando, sucesso e erro de forma clara.
-- Proteger contra spam com campo oculto (honeypot) ou captcha simples.
+- Todos os botões "Pedir orçamento" usam `components/QuoteButton.vue` e abrem o WhatsApp. O mapa vem do endereço em `app/data/site.ts` (`contact.address`), incorporado sem chave de API.
 
 ## Convenções de código
 
@@ -122,4 +119,4 @@ Implementar nesta ordem, uma seção por componente, em `app/components/sections
 3. Trocar o tom 700 do musgo pelo verde exato da logo.
 4. Montar as seções na ordem acima.
 5. Preencher os dados reais da empresa e as fotos.
-6. Configurar formulário, WhatsApp, SEO e publicar.
+6. Configurar WhatsApp, SEO e publicar.

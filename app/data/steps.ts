@@ -7,7 +7,7 @@ export const stepsSection = {
 export const steps = [
   {
     title: 'Contato e conversa inicial',
-    description: 'Você fala com a gente pelo formulário ou pelo WhatsApp e conta o que precisa.'
+    description: 'Você fala com a gente pelo WhatsApp e conta o que precisa.'
   },
   {
     title: 'Visita e medição',

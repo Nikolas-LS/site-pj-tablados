@@ -11,7 +11,7 @@ const whatsapp = useWhatsapp()
     aria-label="Pedir orçamento pelo WhatsApp"
     color="neutral"
     square
-    class="focus-ring-contrast fixed end-4 bottom-[max(1rem,env(safe-area-inset-bottom))] z-40 size-14 justify-center rounded-full bg-green-700 text-white shadow-lg ring-2 ring-white hover:bg-green-800"
+    class="focus-ring-contrast fixed end-4 bottom-[max(1rem,env(safe-area-inset-bottom))] z-40 size-14 justify-center rounded-full bg-green-700 text-white shadow-lg ring-2 ring-white hover:bg-green-800 hover:shadow-xl"
     :ui="{ leadingIcon: 'size-8' }"
   />
 </template>

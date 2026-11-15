@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { motion } from 'motion-v'
 import type { VariantType } from 'motion-v'
-import { navItems as items, quoteCta, site } from '~/data/site'
+import { navItems as items, site } from '~/data/site'
 
 const variants: Record<string, VariantType | ((custom: unknown) => VariantType)> = {
   normal: {
@@ -31,7 +31,7 @@ const variants: Record<string, VariantType | ((custom: unknown) => VariantType)>
       <NuxtLink
         to="/"
         :aria-label="`${site.name}, página inicial`"
-        class="-ms-1 inline-flex min-h-11 items-center rounded-md p-1 focus-visible:outline-3"
+        class="-ms-1 inline-flex min-h-11 items-center rounded-md p-1 whitespace-nowrap focus-visible:outline-3"
       >
         <AppLogo class="text-primary" />
       </NuxtLink>
@@ -40,14 +40,11 @@ const variants: Record<string, VariantType | ((custom: unknown) => VariantType)>
     <UNavigationMenu
       :items="items"
       variant="link"
+      :ui="{ link: 'px-1 xl:px-2.5', list: 'gap-0 xl:gap-0.5' }"
     />
 
     <template #right>
-      <UButton
-        :label="quoteCta.label"
-        :to="quoteCta.to"
-        class="hidden lg:flex"
-      />
+      <QuoteButton class="hidden lg:flex" />
     </template>
 
     <template #toggle="{ open, toggle, ui }">
@@ -114,9 +111,7 @@ const variants: Record<string, VariantType | ((custom: unknown) => VariantType)>
       />
 
       <div class="mt-4">
-        <UButton
-          :label="quoteCta.label"
-          :to="quoteCta.to"
+        <QuoteButton
           size="xl"
           block
           class="min-h-11 justify-center"

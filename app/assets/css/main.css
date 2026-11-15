@@ -87,3 +87,33 @@ a:focus-visible::before {
 h1, h2, h3 {
   font-family: var(--font-display);
 }
+
+/* Entrada suave das seções (diretiva v-reveal): só o conteúdo anima, o fundo da seção fica parado */
+[data-reveal] > * {
+  transition: opacity 0.6s ease-out, translate 0.6s ease-out;
+}
+
+[data-reveal="pending"] > * {
+  opacity: 0;
+  translate: 0 16px;
+}
+
+[data-reveal="shown"] > * {
+  opacity: 1;
+  translate: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] > * {
+    transition: none;
+    opacity: 1;
+    translate: none;
+  }
+}
+
+/* Rolagem suave ao clicar nos links do menu (âncoras); respeita "reduzir movimento" */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}

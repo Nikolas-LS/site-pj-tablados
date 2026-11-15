@@ -1,24 +1,18 @@
-import { services } from './services'
+import { contact } from './site'
 
 export const ctaSection = {
   title: 'Vamos tirar seu projeto do papel?',
-  description: 'Conte o que você precisa e peça um orçamento. Se preferir, é só chamar no WhatsApp.',
+  description: 'Chame a gente no WhatsApp, conte o tipo de obra e as medidas aproximadas e peça seu orçamento.',
   whatsappLabel: 'Chamar no WhatsApp'
 }
 
-export const quoteForm = {
-  projectTypes: [...services.map(service => service.title), 'Outro'],
-  submitLabel: 'Enviar pedido',
-  subject: 'Novo pedido de orçamento - PJ Tablados',
-  fromName: 'Site PJ Tablados',
-  messages: {
-    success: {
-      title: 'Pedido enviado!',
-      description: 'Recebemos seus dados e vamos entrar em contato em breve.'
-    },
-    error: {
-      title: 'Não foi possível enviar agora.',
-      description: 'Tente novamente em instantes ou fale com a gente pelo WhatsApp.'
-    }
-  }
+export const location = {
+  title: 'Onde estamos',
+  address: contact.address,
+  directionsLabel: 'Como chegar',
+  // Link curto do Google Maps, usado no botão "Como chegar"
+  mapsLink: 'https://maps.app.goo.gl/PFmENnzqig7Q1eWm6',
+  // Mapa incorporado a partir do endereço, sem chave de API
+  mapEmbed: `https://maps.google.com/maps?q=${encodeURIComponent(contact.address)}&z=16&hl=pt-BR&output=embed`,
+  mapTitle: 'Mapa com a localização da PJ Tablados'
 }

@@ -21,7 +21,7 @@ const linkClass = 'rounded-sm underline-offset-4 hover:underline focus-visible:o
           <h2 class="font-display text-base font-semibold">
             Menu
           </h2>
-          <ul class="mt-2">
+          <ul class="mt-2 grid grid-cols-2 gap-x-4">
             <li
               v-for="item in navItems"
               :key="item.to"
@@ -66,14 +66,6 @@ const linkClass = 'rounded-sm underline-offset-4 hover:underline focus-visible:o
               />
               {{ contact.phone }}
             </li>
-            <li class="flex items-start gap-2">
-              <UIcon
-                name="i-lucide-mail"
-                class="mt-0.5 size-4 shrink-0"
-                aria-hidden="true"
-              />
-              {{ contact.email }}
-            </li>
           </ul>
         </div>
 
@@ -85,6 +77,14 @@ const linkClass = 'rounded-sm underline-offset-4 hover:underline focus-visible:o
             <li class="flex items-start gap-2">
               <UIcon
                 name="i-lucide-map-pin"
+                class="mt-0.5 size-4 shrink-0"
+                aria-hidden="true"
+              />
+              {{ contact.address }}
+            </li>
+            <li class="flex items-start gap-2">
+              <UIcon
+                name="i-lucide-map"
                 class="mt-0.5 size-4 shrink-0"
                 aria-hidden="true"
               />
@@ -113,7 +113,7 @@ const linkClass = 'rounded-sm underline-offset-4 hover:underline focus-visible:o
                 target="_blank"
                 rel="noopener noreferrer"
                 :aria-label="network.label"
-                class="inline-flex size-11 items-center justify-center rounded-md hover:bg-inverted/10 focus-visible:outline-2 focus-visible:outline-inverted"
+                class="inline-flex size-11 items-center justify-center rounded-md hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-inverted"
               >
                 <UIcon
                   :name="network.icon"
@@ -131,7 +131,7 @@ const linkClass = 'rounded-sm underline-offset-4 hover:underline focus-visible:o
         </div>
       </div>
 
-      <p class="mt-10 border-t border-inverted/15 pt-6 text-sm text-inverted/80">
+      <p class="mt-10 border-t border-white/15 pt-6 text-sm text-inverted/80">
         © {{ new Date().getFullYear() }} PJ Tablados. Todos os direitos reservados.
       </p>
     </UContainer>

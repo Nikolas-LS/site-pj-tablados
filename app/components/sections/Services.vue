@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { services, servicesSection } from '~/data/services'
-import { quoteCta } from '~/data/site'
 </script>
 
 <template>
@@ -47,9 +46,7 @@ import { quoteCta } from '~/data/site'
             </p>
 
             <template #footer>
-              <UButton
-                :label="quoteCta.label"
-                :to="quoteCta.to"
+              <QuoteButton
                 trailing-icon="i-lucide-arrow-right"
                 variant="link"
                 size="lg"

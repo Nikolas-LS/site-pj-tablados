@@ -1,10 +1,7 @@
-import { quoteCta } from './site'
-
 export const hero = {
   title: 'Tablados e decks de madeira com qualidade e durabilidade',
   // TODO: incluir o diferencial principal e a região atendida, quando definidos
   description: 'Projeto, construção e manutenção de tablados, decks e pisos externos de madeira. TODO: região atendida.',
-  primaryCta: quoteCta,
   secondaryCta: { label: 'Ver projetos', to: '#projetos' },
   image: {
     // TODO: trocar por uma foto real de tablado pronto (horizontal, boa luz, ideal em WebP)

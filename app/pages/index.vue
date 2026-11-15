@@ -1,14 +1,14 @@
 <template>
   <div>
     <SectionsHero />
-    <SectionsTrustBar />
-    <SectionsServices />
-    <SectionsAbout />
-    <SectionsDifferentials />
-    <SectionsGallery />
-    <SectionsSteps />
-    <SectionsTestimonials />
-    <SectionsFaq />
-    <SectionsCtaForm />
+    <SectionsTrustBar v-reveal />
+    <SectionsServices v-reveal />
+    <SectionsAbout v-reveal />
+    <SectionsDifferentials v-reveal />
+    <SectionsGallery v-reveal />
+    <SectionsSteps v-reveal />
+    <SectionsTestimonials v-reveal />
+    <SectionsFaq v-reveal />
+    <SectionsContact v-reveal />
   </div>
 </template>

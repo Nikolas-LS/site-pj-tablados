@@ -23,6 +23,6 @@ export const faqItems = [
   },
   {
     label: 'Como peço um orçamento?',
-    content: 'É só preencher o formulário ou chamar a gente pelo WhatsApp, contando o tipo de obra e as medidas aproximadas. Respondemos para combinar a visita.'
+    content: 'É só chamar a gente pelo WhatsApp, contando o tipo de obra e as medidas aproximadas. Respondemos para combinar a visita.'
   }
 ]

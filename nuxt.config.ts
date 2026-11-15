@@ -35,8 +35,7 @@ export default defineNuxtConfig({
   // Valores vêm de variáveis de ambiente (ver .env.example), nunca do código
   runtimeConfig: {
     public: {
-      whatsappNumber: '',
-      web3formsKey: ''
+      whatsappNumber: ''
     }
   },
 

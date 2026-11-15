@@ -19,7 +19,7 @@ Tudo o que é da empresa fica no nome da empresa, com o e-mail dela. Você traba
 |---|---|---|
 | Cloudflare (domínio, DNS, hospedagem) | Cliente, com e-mail da empresa | Membro convidado com permissão para publicar |
 | GitHub (repositório do código) | Cliente, conta ou organização | Colaborador com permissão de escrita |
-| Formulário (Web3Forms ou Formspree) | Cliente, com e-mail da empresa | Quem configura, sem ser o titular |
+| Google Maps (link do local da empresa) | Cliente | Nenhum, o mapa usa só o endereço |
 | E-mail profissional, se houver | Cliente | Apoio na configuração |
 
 **Fluxo recomendado:**
@@ -57,7 +57,7 @@ Como a landing é um site estático, o ideal é gerar os arquivos estáticos com
 1. No projeto, usar o comando de geração estática do Nuxt: `npm run generate`.
 2. O resultado fica na pasta `.output/public`.
 3. Confirmar que o site funciona abrindo essa pasta com um servidor local ou com `npx nuxi preview`.
-4. Garantir que o formulário use Web3Forms ou Formspree e que as chaves estejam em variáveis de ambiente.
+4. Garantir que o número do WhatsApp esteja em variável de ambiente (`NUXT_PUBLIC_WHATSAPP_NUMBER`).
 
 Se no futuro o site precisar de rotas de servidor, dá para usar o modo com Workers da Cloudflare, mas para a landing o modo estático é mais simples.
 
@@ -68,7 +68,7 @@ Se no futuro o site precisar de rotas de servidor, dá para usar o modo com Work
 3. No painel, ir em Workers e Pages, criar um novo projeto e conectar ao GitHub.
 4. Escolher o repositório da PJ Tablados.
 5. Configurar o build: comando `npm run generate` e pasta de saída `.output/public`.
-6. Adicionar as variáveis de ambiente, como a chave do formulário e o número do WhatsApp.
+6. Adicionar as variáveis de ambiente, como o número do WhatsApp.
 7. Salvar e aguardar o primeiro deploy. A Cloudflare entrega um endereço provisório de testes.
 8. A partir daí, cada envio para a branch principal gera um novo deploy automático.
 
@@ -108,7 +108,7 @@ Se usar e-mail pelo domínio, configurar SPF, DKIM e DMARC no DNS para não cair
 
 - Testar o site no celular e no computador, com e sem `www`.
 - Conferir se o HTTPS está ativo e sem avisos de segurança.
-- Testar o formulário e o link do WhatsApp em produção.
+- Testar os links do WhatsApp e o mapa em produção.
 - Cadastrar o site no Google Search Console e enviar o sitemap.
 - Criar ou atualizar o perfil da empresa no Google Meu Negócio, com o link do site.
 - Colocar o link na bio do Instagram e no WhatsApp Business.
@@ -122,7 +122,7 @@ Se usar e-mail pelo domínio, configurar SPF, DKIM e DMARC no DNS para não cair
 4. Subir o código para o GitHub.
 5. Criar o projeto no Cloudflare Pages e fazer o primeiro deploy.
 6. Apontar o DNS e adicionar o domínio personalizado.
-7. Testar HTTPS, formulário e WhatsApp.
+7. Testar HTTPS, WhatsApp e mapa.
 8. Configurar e-mail, Search Console e Google Meu Negócio.
 
 ## 10. Checklist de entrega ao cliente
@@ -134,7 +134,7 @@ Marcar cada item antes de dar o projeto por entregue.
 - [ ] Repositório na conta ou organização do cliente no GitHub, ou cópia entregue por escrito.
 - [ ] Cliente com acesso de administrador à Cloudflare e ao GitHub.
 - [ ] Verificação em duas etapas ativada nas contas.
-- [ ] Formulário e WhatsApp testados, com as notificações chegando no e-mail e no número do cliente.
+- [ ] WhatsApp e mapa testados, com as mensagens chegando no número do cliente.
 - [ ] Variáveis de ambiente e chaves registradas num local seguro do cliente, nunca no código.
 - [ ] Search Console e Google Meu Negócio configurados.
 - [ ] Cliente recebeu um resumo simples de como pedir alterações de texto e de foto.

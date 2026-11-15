@@ -18,9 +18,7 @@ import { hero } from '~/data/hero'
         </p>
 
         <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-          <UButton
-            :label="hero.primaryCta.label"
-            :to="hero.primaryCta.to"
+          <QuoteButton
             size="xl"
             class="min-h-11 justify-center"
           />

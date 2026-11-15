@@ -33,9 +33,16 @@ useSeoMeta({
     :locale="pt_br"
     :toaster="{ expand: false }"
   >
+    <a
+      href="#conteudo"
+      class="sr-only focus:not-sr-only focus:fixed focus:start-4 focus:top-4 focus:z-[60] focus:rounded-md focus:bg-primary focus:px-4 focus:py-3 focus:text-inverted focus:outline-2 focus:outline-offset-2 focus:outline-primary"
+    >
+      Pular para o conteúdo
+    </a>
+
     <AppHeader />
 
-    <UMain>
+    <UMain id="conteudo">
       <NuxtPage />
     </UMain>
 

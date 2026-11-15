@@ -83,7 +83,7 @@ function reset() {
 </script>
 
 <template>
-  <div class="rounded-[10px] bg-default p-6 text-default shadow-lg sm:p-8">
+  <div class="focus-ring-dark rounded-[10px] bg-default p-6 text-default shadow-lg sm:p-8">
     <div
       v-if="status === 'success'"
       class="py-6 text-center"

@@ -7,7 +7,7 @@ const linkClass = 'rounded-sm underline-offset-4 hover:underline focus-visible:o
 </script>
 
 <template>
-  <footer class="bg-primary-800 text-inverted">
+  <footer class="focus-ring-light bg-primary-800 text-inverted">
     <UContainer class="py-12 lg:py-16">
       <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
         <div>
@@ -42,16 +42,17 @@ const linkClass = 'rounded-sm underline-offset-4 hover:underline focus-visible:o
             Contato
           </h2>
           <ul class="mt-4 space-y-3 text-sm text-inverted/90">
-            <li class="flex items-start gap-2">
+            <li class="flex items-center gap-2">
               <UIcon
                 name="i-simple-icons-whatsapp"
-                class="mt-0.5 size-4 shrink-0"
+                class="size-4 shrink-0"
                 aria-hidden="true"
               />
               <a
                 :href="whatsapp.link()"
                 target="_blank"
                 rel="noopener noreferrer"
+                class="inline-flex min-h-11 items-center"
                 :class="linkClass"
               >
                 WhatsApp

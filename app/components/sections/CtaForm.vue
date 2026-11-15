@@ -7,7 +7,7 @@ const whatsapp = useWhatsapp()
 <template>
   <section
     id="contato"
-    class="scroll-mt-(--ui-header-height) bg-primary text-inverted"
+    class="focus-ring-light scroll-mt-(--ui-header-height) bg-primary text-inverted"
   >
     <UContainer class="grid items-start gap-10 py-16 sm:py-20 lg:grid-cols-2 lg:gap-16 lg:py-24">
       <div class="lg:pt-4">

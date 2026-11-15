@@ -55,6 +55,18 @@ export default defineNuxtConfig({
     }
   },
 
+  // Só o que o site usa: alfabeto latino (cobre o português), sem itálico e só os pesos aplicados
+  fonts: {
+    defaults: {
+      styles: ['normal'],
+      subsets: ['latin']
+    },
+    families: [
+      { name: 'Inter', weights: [400, 500, 600, 700] },
+      { name: 'Montserrat', weights: [600, 700] }
+    ]
+  },
+
   prerender: {
     routes: [
       '/'

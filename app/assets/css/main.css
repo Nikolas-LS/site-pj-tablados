@@ -49,6 +49,38 @@
 
   /* No modo claro o verde principal usa o tom 700 (mais escuro) */
   --ui-primary: var(--color-musgo-700);
+
+  /* Texto de placeholder com contraste mínimo de 4,5:1 sobre branco (o padrão do Nuxt UI tem ~2,6:1) */
+  --ui-text-dimmed: #6b746e;
+
+  --focus-ring: var(--ui-primary);
+}
+
+/* Foco visível: o Nuxt UI usa um anel com 25% de opacidade, abaixo dos 3:1 de contraste da WCAG.
+   Aqui o anel passa a ter a cor cheia, definida pela variável --focus-ring. */
+a:focus-visible,
+button:focus-visible,
+[role="combobox"]:focus-visible,
+summary:focus-visible {
+  outline-color: var(--focus-ring);
+  outline-offset: 2px;
+}
+
+a:focus-visible::before {
+  outline-color: var(--focus-ring);
+}
+
+/* Fundos verdes escuros pedem anel claro; cartões claros dentro deles voltam ao anel escuro */
+@utility focus-ring-light {
+  --focus-ring: var(--ui-text-inverted);
+}
+
+@utility focus-ring-dark {
+  --focus-ring: var(--ui-primary);
+}
+
+@utility focus-ring-contrast {
+  --focus-ring: var(--ui-text-highlighted);
 }
 
 /* Títulos com a fonte de destaque */

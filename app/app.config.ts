@@ -2,7 +2,7 @@ export default defineAppConfig({
   ui: {
     colors: {
       primary: 'musgo',
-      secondary: 'madeira',
+      secondary: 'ouro',
       success: 'green',
       info: 'sky',
       warning: 'amber',
@@ -29,7 +29,7 @@ export default defineAppConfig({
     // Cartões com raio de 10 px e sombra suave, como no design system
     card: {
       slots: {
-        root: 'rounded-[10px] shadow-sm'
+        root: 'rounded-[10px] shadow-sm dark:bg-elevated'
       }
     }
   }

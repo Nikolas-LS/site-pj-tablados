@@ -1,13 +1,12 @@
 export const hero = {
-  title: 'Tablados e decks de madeira com qualidade e durabilidade',
-  // TODO: incluir o diferencial principal e a região atendida, quando definidos
-  description: 'Projeto, construção e manutenção de tablados, decks e pisos externos de madeira. TODO: região atendida.',
-  secondaryCta: { label: 'Ver projetos', to: '#projetos' },
+  title: 'Tablados de madeira para eventos, com qualidade e durabilidade',
+  description: 'Venda de tablados e fabricação sob medida, em madeira, para o seu evento em qualquer lugar do Brasil.',
+  secondaryCta: { label: 'Ver serviços', to: '#servicos' },
   image: {
-    // TODO: trocar por uma foto real de tablado pronto (horizontal, boa luz, ideal em WebP)
-    src: '/images/exemplo/hero-tablado.svg',
-    alt: 'Tablado de madeira em um jardim (imagem de exemplo)',
-    width: 1200,
-    height: 900
+    // Foto real de um tablado da PJ Tablados montado em evento
+    src: '/images/evento-por-do-sol.webp',
+    alt: 'Tablado de madeira montado sob uma tenda, em um evento ao pôr do sol',
+    width: 960,
+    height: 1280
   }
 }

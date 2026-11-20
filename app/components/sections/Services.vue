@@ -5,21 +5,27 @@ import { services, servicesSection } from '~/data/services'
 <template>
   <section
     id="servicos"
-    class="scroll-mt-(--ui-header-height) bg-default"
+    class="relative scroll-mt-(--ui-header-height) overflow-hidden bg-default"
   >
-    <UContainer class="py-16 sm:py-20 lg:py-24">
+    <SectionDiamonds
+      side="end"
+      position="top"
+    />
+
+    <UContainer class="relative py-16 sm:py-20 lg:py-24">
       <SectionHeading
+        :eyebrow="servicesSection.eyebrow"
         :title="servicesSection.title"
         :description="servicesSection.description"
       />
 
-      <ul class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <ul class="mx-auto mt-12 grid max-w-4xl gap-8 sm:grid-cols-2">
         <li
-          v-for="service in services"
+          v-for="(service, index) in services"
           :key="service.title"
         >
           <UCard
-            class="h-full"
+            class="group h-full transition-shadow duration-300 hover:shadow-lg motion-safe:transition-transform motion-safe:hover:-translate-y-1"
             :ui="{
               root: 'flex h-full flex-col',
               header: 'p-0 sm:p-0',
@@ -28,17 +34,23 @@ import { services, servicesSection } from '~/data/services'
             }"
           >
             <template #header>
-              <img
-                :src="service.image.src"
-                :alt="service.image.alt"
-                width="800"
-                height="600"
-                loading="lazy"
-                class="aspect-[4/3] w-full object-cover"
-              >
+              <div class="overflow-hidden">
+                <img
+                  :src="service.image.src"
+                  :alt="service.image.alt"
+                  width="800"
+                  height="600"
+                  loading="lazy"
+                  class="aspect-[4/3] w-full object-cover dark:brightness-90 motion-safe:transition-transform motion-safe:duration-500 motion-safe:group-hover:scale-105"
+                  :class="service.image.position"
+                >
+              </div>
             </template>
 
-            <h3 class="font-display text-2xl font-semibold text-highlighted">
+            <p class="font-display text-sm font-semibold tracking-[0.2em] text-ouro-700 dark:text-ouro-300">
+              {{ String(index + 1).padStart(2, '0') }}
+            </p>
+            <h3 class="mt-1 font-display text-2xl font-semibold text-highlighted">
               {{ service.title }}
             </h3>
             <p class="mt-2 text-base text-muted">

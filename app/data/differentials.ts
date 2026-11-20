@@ -1,14 +1,15 @@
+// Textos gerais: revisar com os donos para destacar o que a empresa tem de único.
 export const differentialsSection = {
+  eyebrow: 'Diferenciais',
   title: 'Por que escolher a PJ Tablados',
-  // TODO: confirmar os diferenciais reais com a empresa
-  description: 'TODO: diferenciais provisórios, a confirmar com a empresa.'
+  description: 'Tablados de madeira pensados para o seu evento, do orçamento à entrega.'
 }
 
 export const differentials = [
   {
     icon: 'i-lucide-tree-pine',
     title: 'Madeira selecionada',
-    description: 'Madeira escolhida e tratada para durar em áreas externas.'
+    description: 'Madeira escolhida com cuidado, pensada para durar.'
   },
   {
     icon: 'i-lucide-sparkles',
@@ -18,17 +19,17 @@ export const differentials = [
   {
     icon: 'i-lucide-calendar-clock',
     title: 'Prazo combinado',
-    description: 'Cronograma definido antes de começar e acompanhado até a entrega.'
+    description: 'A data de entrega é definida com você já no orçamento.'
   },
   {
-    icon: 'i-lucide-shield-check',
-    title: 'Garantia do serviço',
-    description: 'Segurança de contar com a empresa depois da obra pronta.'
+    icon: 'i-lucide-headset',
+    title: 'Atendimento direto',
+    description: 'Você fala com a nossa equipe pelo WhatsApp, sem intermediários.'
   },
   {
     icon: 'i-lucide-ruler',
-    title: 'Visita e medição',
-    description: 'Avaliamos o espaço no local antes de montar o orçamento.'
+    title: 'Feito sob medida',
+    description: 'Tablados fabricados nas medidas do seu projeto.'
   },
   {
     icon: 'i-lucide-file-check',

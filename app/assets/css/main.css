@@ -6,32 +6,31 @@
   --font-sans: 'Inter', system-ui, sans-serif;
   --font-display: 'Montserrat', 'Inter', sans-serif;
 
-  /* Verde musgo (principal) - tom 700 = #1F4D3A */
-  /* TODO: trocar o tom 700 pelo verde exato da logo e regenerar a escala */
-  --color-musgo-50: #eef5f1;
-  --color-musgo-100: #e3ede7;
-  --color-musgo-200: #c4dacf;
-  --color-musgo-300: #9bbfad;
-  --color-musgo-400: #6c9d85;
-  --color-musgo-500: #3f7a5f;
-  --color-musgo-600: #2e6049;
-  --color-musgo-700: #1f4d3a;
-  --color-musgo-800: #163828;
-  --color-musgo-900: #0f2a1e;
-  --color-musgo-950: #081a12;
+  /* Verde-oliva da logo (principal) - tom 700 = #202813, o fundo exato da logo */
+  --color-musgo-50: #f6f8f2;
+  --color-musgo-100: #eaefe1;
+  --color-musgo-200: #d4dec4;
+  --color-musgo-300: #b5c69a;
+  --color-musgo-400: #92ad67;
+  --color-musgo-500: #6e8943;
+  --color-musgo-600: #4b6029;
+  --color-musgo-700: #202813;
+  --color-musgo-800: #151a0c;
+  --color-musgo-900: #0f1309;
+  --color-musgo-950: #0a0c06;
 
-  /* Marrom amadeirado (apoio) - tom 600 = #8b5e3c */
-  --color-madeira-50: #f8f3ee;
-  --color-madeira-100: #e8d9c7;
-  --color-madeira-200: #d6bc9f;
-  --color-madeira-300: #c19c75;
-  --color-madeira-400: #a97b52;
-  --color-madeira-500: #96693f;
-  --color-madeira-600: #8b5e3c;
-  --color-madeira-700: #6f4a2f;
-  --color-madeira-800: #553724;
-  --color-madeira-900: #3b2619;
-  --color-madeira-950: #22150e;
+  /* Dourado da logo (apoio) - tom 400 = #ce9f60, o dos filetes e do texto "Tablados para Eventos" */
+  --color-ouro-50: #faf6ef;
+  --color-ouro-100: #f3e7d8;
+  --color-ouro-200: #e8d2b5;
+  --color-ouro-300: #dbb88a;
+  --color-ouro-400: #ce9f60;
+  --color-ouro-500: #c3893c;
+  --color-ouro-600: #9c6e30;
+  --color-ouro-700: #795525;
+  --color-ouro-800: #5a3f1c;
+  --color-ouro-900: #3e2c13;
+  --color-ouro-950: #23190b;
 }
 
 :root {
@@ -47,11 +46,43 @@
   /* Largura máxima do conteúdo: 1200 px */
   --ui-container: 75rem;
 
-  /* No modo claro o verde principal usa o tom 700 (mais escuro) */
+  /* No modo claro o verde principal usa o tom 700 (o da logo) e o dourado de apoio usa o 600,
+     que tem contraste de texto sobre branco (o tom 400 da logo só serve sobre fundo escuro) */
   --ui-primary: var(--color-musgo-700);
+  --ui-secondary: var(--color-ouro-600);
 
   /* Texto de placeholder com contraste mínimo de 4,5:1 sobre branco (o padrão do Nuxt UI tem ~2,6:1) */
   --ui-text-dimmed: #6b746e;
+
+  --focus-ring: var(--ui-primary);
+}
+
+/* Tema escuro: usa as mesmas cores da paleta. O fundo é o verde-oliva da logo bem escuro, o texto é o creme da logo
+   e o dourado passa a ser a cor de destaque (no claro o destaque é o verde). Os blocos de marca (faixa de confiança, contato,
+   rodapé e menu do celular) usam verde e branco fixos e ficam iguais nos dois temas. */
+.dark {
+  color-scheme: dark;
+
+  --ui-bg: var(--color-musgo-900);
+  --ui-bg-muted: var(--color-musgo-800);
+  --ui-bg-elevated: var(--color-musgo-700);
+  --ui-bg-accented: #2a3519;
+  --ui-bg-inverted: #f0eeea;
+
+  --ui-border: #2a3320;
+  --ui-border-muted: var(--color-musgo-700);
+  --ui-border-accented: #3a4630;
+  --ui-border-inverted: #f0eeea;
+
+  --ui-text: #f0eeea;
+  --ui-text-highlighted: #ffffff;
+  --ui-text-toned: #d9d6cf;
+  --ui-text-muted: #adaca7;
+  --ui-text-dimmed: #8f8f89;
+  --ui-text-inverted: var(--color-musgo-900);
+
+  --ui-primary: var(--color-ouro-400);
+  --ui-secondary: var(--color-ouro-400);
 
   --focus-ring: var(--ui-primary);
 }
@@ -72,15 +103,11 @@ a:focus-visible::before {
 
 /* Fundos verdes escuros pedem anel claro; cartões claros dentro deles voltam ao anel escuro */
 @utility focus-ring-light {
-  --focus-ring: var(--ui-text-inverted);
+  --focus-ring: #fff;
 }
 
 @utility focus-ring-dark {
   --focus-ring: var(--ui-primary);
-}
-
-@utility focus-ring-contrast {
-  --focus-ring: var(--ui-text-highlighted);
 }
 
 /* Títulos com a fonte de destaque */
@@ -115,5 +142,46 @@ h1, h2, h3 {
 @media (prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: smooth;
+  }
+}
+
+/* Menu do celular: cada item entra deslizando, um depois do outro (--i é a posição do item).
+   O Nuxt UI cuida da entrada e da saída do painel; aqui só o escalonamento dos itens. */
+@keyframes menu-item-in {
+  from {
+    opacity: 0;
+    translate: 20px 0;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@utility menu-item {
+  animation: menu-item-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: calc(var(--i, 0) * 55ms + 150ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu-item {
+    animation: none;
+  }
+
+  [role="dialog"][data-state] {
+    animation: none !important;
+  }
+}
+
+/* Linha dourada do menu do cabeçalho: desliza e muda de largura ao trocar de seção, e cresce do centro ao aparecer */
+@utility nav-line {
+  transition:
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    width 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-line {
+    transition: none !important;
   }
 }

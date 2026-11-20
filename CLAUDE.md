@@ -4,9 +4,9 @@ Copie o conteúdo abaixo para um arquivo chamado CLAUDE.md na raiz do projeto.
 
 ## Visão geral do projeto
 
-Landing page institucional da **PJ Tablados**, empresa que trabalha com tablados e decks de madeira. O objetivo principal do site é converter visitantes em pedidos de orçamento pelo WhatsApp. O público é formado por pessoas e empresas que querem contratar a construção ou a manutenção de tablados, decks e pisos externos de madeira, e a maior parte do acesso virá pelo celular.
+Landing page institucional da **PJ Tablados**, empresa de tablados de madeira para eventos ("Tablados para Eventos"), que vende tablados e fabrica sob medida. O objetivo principal do site é converter visitantes em pedidos de orçamento pelo WhatsApp. O público é formado por pessoas e empresas que querem comprar tablados de madeira ou encomendar tablados sob medida para eventos, e a maior parte do acesso virá pelo celular.
 
-Ainda faltam definir: lista real de serviços, contato (WhatsApp, telefone, e-mail), região atendida, fotos reais, depoimentos e números da empresa. Enquanto isso, usar textos de exemplo claramente marcados com `TODO` e nunca inventar dados como telefone, endereço, anos de experiência ou nomes de clientes.
+Os textos do site são rascunhos gerais, sem promessas que não sejam conhecidas (sem anos de experiência, números de obras, garantias ou horários). Dados confirmados pelo cliente: telefone/WhatsApp (o da logo), endereço, Instagram e Facebook, serviços (venda de tablados e fabricação sob medida). Região atendida: todo o Brasil (a empresa está ampliando o atendimento para além do Sul; o endereço em Portão-RS é só o da sede). O site não terá seções de depoimentos, galeria de projetos nem "Como funciona" (decisão do cliente).
 
 ## Stack
 
@@ -33,26 +33,29 @@ Rodar o build e a checagem de tipos antes de dar uma tarefa por concluída.
 
 ## Identidade visual
 
-Direção: natural, firme, limpa e confiável, com base no verde musgo escuro da logo e no marrom amadeirado da madeira.
+Direção: natural, firme, limpa e confiável, com base no verde-oliva escuro e no dourado da logo (arquivo em `imgs/logo.png`).
 
-**Cores** (códigos aproximados, o verde exato deve ser conferido na logo):
+**Cores** (medidas na logo; o tom 700 do verde e o tom 400 do dourado são exatamente os dela):
 
-- Principal, verde musgo: `#1F4D3A` (tom 700 da escala `musgo`)
-- Principal escuro, hover: `#163828`
-- Principal claro, fundos suaves: `#E3EDE7`
-- Apoio, marrom madeira: `#8B5E3C` (tom 600 da escala `madeira`)
-- Apoio claro, bege: `#E8D9C7`
+- Principal, verde-oliva: `#202813` (tom 700 da escala `musgo`, o fundo da logo)
+- Principal escuro (rodapé): `#151A0C`
+- Principal claro, fundos suaves: `#EAEFE1`
+- Apoio, dourado: `#CE9F60` (tom 400 da escala `ouro`, só sobre fundo escuro); `#9C6E30` (tom 600) para uso sobre fundo claro
+- Creme da logo: `#F0EEEA`
 - Fundo: `#FFFFFF`; fundo alternativo off-white: `#F7F5F0`
 - Texto: `#1C2420`; texto secundário: `#5C6660`; bordas: `#D9DDD9`
 - Sucesso: `#2E7D4F`; erro: `#B3402F`
 
-**Mapeamento no Nuxt UI** (app.config.ts): `primary` = `musgo`, `secondary` = `madeira`, `neutral` = `stone`, `success` = `green`, `error` = `red`.
+**Mapeamento no Nuxt UI** (app.config.ts): `primary` = `musgo`, `secondary` = `ouro`, `neutral` = `stone`, `success` = `green`, `error` = `red`.
 
 **Regras de uso:**
 
-- Verde musgo em botões principais, cabeçalho, rodapé e seção final de chamada.
-- Marrom madeira apenas em detalhes, ícones e destaques, nunca como texto pequeno sobre branco sem checar contraste.
-- Seções alternando fundo branco e off-white.
+- Verde-oliva em botões principais, ícone da logo, rodapé e seção final de chamada.
+- Dourado apenas em detalhes, ícones e filetes. O tom 400 só sobre fundo escuro; sobre branco usar o 600. Nunca como texto pequeno sem checar contraste.
+- Seções alternando fundo branco e off-white, com a faixa de confiança e a chamada final em verde-oliva.
+- **Tema claro e escuro:** o claro é o padrão. O escuro é opcional, escolhido no botão (sol/lua) do cabeçalho, e a escolha fica salva no navegador. O escuro usa a mesma paleta: fundo `musgo-900`/`800`, texto creme `#F0EEEA` e dourado (`ouro-400`) como cor de destaque e dos botões. As variáveis ficam no bloco `.dark` do `main.css`. Blocos de marca (faixa de confiança, contato, rodapé, painel do celular) usam `bg-musgo-700`/`text-white` fixos, iguais nos dois temas. Em componentes novos use as cores semânticas (`bg-default`, `text-muted`, `text-primary`...) e, se usar `ouro-700` ou `ouro-100` no claro, acrescente a variante `dark:`.
+- **Seção atual no menu:** o item do cabeçalho (e do painel do celular) da seção que está na tela fica marcado (texto escuro e uma linha dourada única que cresce do centro ao aparecer e desliza entre os itens ao trocar de seção, a ~2 px do texto, no desktop; texto dourado no painel). Vem de `useActiveSection` e usa os ids das seções; ao criar uma seção nova com link no menu, basta pôr o link em `navItems` com o mesmo id.
+- **Assinatura visual das seções:** rótulo dourado em caixa alta (`SectionEyebrow`), título, filete dourado curto, losangos da logo nos cantos só em telas grandes (`SectionDiamonds`) e moldura dourada deslocada atrás de fotos, vídeo e mapa. `SectionHeading` já traz rótulo e filete. Movimento sempre sutil (hover de 4 px, zoom leve na foto) e desligado com "reduzir movimento".
 - Bordas pouco arredondadas: 6 px em botões e campos, 10 px em cartões.
 - Sombras suaves e discretas.
 - Espaçamento em múltiplos de 8 px, conteúdo com largura máxima de 1200 px.
@@ -62,20 +65,17 @@ Direção: natural, firme, limpa e confiável, com base no verde musgo escuro da
 
 Implementar nesta ordem, uma seção por componente, em `app/components/sections/`:
 
-1. **Cabeçalho:** logo à esquerda, menu (Início, Serviços, Projetos, Sobre, Contato), botão "Pedir orçamento", fixo no topo, menu hambúrguer no celular.
-2. **Hero:** título forte, subtítulo curto, botões "Pedir orçamento" e "Ver projetos", foto grande de tablado pronto.
+1. **Cabeçalho:** logo à esquerda, menu (Início, Serviços, Sobre, Diferenciais, Perguntas, Contato), botão "Pedir orçamento", fixo no topo, no celular, menu em painel lateral verde-oliva (abre deslizando, links numerados e redes sociais; sem logo, botão de orçamento, endereço ou tagline).
+2. **Hero:** título forte, subtítulo curto, botões "Pedir orçamento" e "Ver serviços", foto grande de tablado pronto.
 3. **Faixa de confiança:** de três a quatro números ou selos (experiência, obras, madeira tratada, garantia).
-4. **Serviços:** cartões com foto, título e descrição (tablados, decks, pisos externos, manutenção).
-5. **Sobre a empresa:** texto curto, foto da equipe ou de obra, valores.
+4. **Serviços:** dois cartões com foto real, título e descrição: venda de tablados e fabricação sob medida (serviços confirmados pelo cliente).
+5. **Sobre a empresa:** título, um parágrafo de apresentação e três valores, com o vídeo da oficina ao lado (em loop, sem som e só com botão de pausar) e botão de orçamento. Sem frase de abertura e sem citação (a pedido do cliente).
 6. **Diferenciais:** grade de três a seis itens com ícone e uma linha de texto.
-7. **Galeria de projetos:** grade de fotos horizontais, ampliar ao clicar, legenda com local e tipo de obra.
-8. **Como funciona:** quatro passos em linha do tempo (contato, visita e medição, orçamento, execução).
-9. **Depoimentos:** dois a três, com nome e cidade.
-10. **Perguntas frequentes:** formato sanfona.
-11. **Chamada final:** fundo verde musgo, botão de WhatsApp, endereço com botão "Como chegar" e mapa do Google incorporado.
-12. **Rodapé:** logo, links, contatos, região atendida, horário, redes sociais.
+7. **Perguntas frequentes:** formato sanfona.
+8. **Chamada final:** fundo verde musgo, botão de WhatsApp, endereço com botão "Como chegar" e mapa do Google incorporado.
+9. **Rodapé:** logo, contato (WhatsApp, telefone e redes sociais), endereço e região atendida. Sem menu de navegação, sem frase da logo e sem descrição da empresa (a pedido do cliente).
 
-**Elementos fixos:** botão flutuante de WhatsApp no canto inferior direito, visível em todas as seções.
+**Elementos fixos:** só o cabeçalho. Não há botão flutuante de WhatsApp (removido a pedido do cliente). O pedido de orçamento fica nos botões "Pedir orçamento" e na seção de contato.
 
 ## WhatsApp e mapa
 
@@ -88,7 +88,7 @@ Implementar nesta ordem, uma seção por componente, em `app/components/sections
 - Nomes de componentes em PascalCase, arquivos de composables em camelCase com prefixo `use`.
 - Preferir componentes do Nuxt UI (`UButton`, `UCard`, `UAccordion`, `UForm`, `UFormField`, `UInput`, etc.) antes de criar HTML próprio.
 - Estilizar com classes do Tailwind e com as cores do tema (`primary`, `secondary`), evitando valores hexadecimais soltos no código.
-- Conteúdo editável (textos, serviços, perguntas, depoimentos, contatos) centralizado em arquivos de dados, como `app/data/`, para facilitar trocas sem mexer nos componentes.
+- Conteúdo editável (textos, serviços, perguntas, contatos) centralizado em arquivos de dados, como `app/data/`, para facilitar trocas sem mexer nos componentes.
 - Componentes pequenos e reutilizáveis, sem duplicar blocos de código.
 - Comentários apenas onde a lógica não for óbvia.
 
@@ -107,7 +107,7 @@ Implementar nesta ordem, uma seção por componente, em `app/components/sections
 - Responder e escrever os textos do site em português do Brasil, com tom próximo, profissional e direto.
 - Trabalhar uma seção por vez, explicando em poucas linhas o que foi feito.
 - Antes de mudanças grandes (estrutura de pastas, troca de biblioteca, novas dependências), perguntar primeiro.
-- Não inventar informações da empresa; usar `TODO` quando faltar dado.
+- Não inventar números, prazos, garantias ou horários da empresa. Sem dado confirmado, usar texto geral e verdadeiro (nunca deixar `TODO` visível no site) e anotar em comentário "Revisar com os donos".
 - Não adicionar dependências sem necessidade.
 - Seguir sempre as cores e regras visuais deste arquivo.
 - Depois de editar, rodar o build e a checagem de tipos e relatar qualquer erro.
@@ -115,7 +115,7 @@ Implementar nesta ordem, uma seção por componente, em `app/components/sections
 ## Próximos passos
 
 1. Criar o projeto a partir do template de landing do Nuxt UI (landing-template.nuxt.dev).
-2. Aplicar o tema: escalas `musgo` e `madeira` no `main.css` e mapeamento de cores no `app.config.ts`.
+2. Aplicar o tema: escalas `musgo` e `ouro` no `main.css` e mapeamento de cores no `app.config.ts`.
 3. Trocar o tom 700 do musgo pelo verde exato da logo.
 4. Montar as seções na ordem acima.
 5. Preencher os dados reais da empresa e as fotos.

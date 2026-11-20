@@ -1,62 +1,41 @@
-# Nuxt Landing Template
+# PJ Tablados
 
-[![Nuxt UI](https://img.shields.io/badge/Made%20with-Nuxt%20UI-00DC82?logo=nuxt&labelColor=020420)](https://ui.nuxt.com)
+Site institucional da **PJ Tablados** (tablados de madeira para eventos: venda e fabricação sob medida). Uma página só, feita para gerar pedidos de orçamento pelo WhatsApp, com tema claro (padrão) e escuro.
 
-Use this template to build your own landing page with [Nuxt UI](https://ui.nuxt.com) quickly.
+**Tecnologias:** Nuxt 4, Nuxt UI 4, Tailwind CSS 4 e TypeScript. Gerenciador de pacotes: **pnpm**.
 
-- [Live demo](https://landing-template.nuxt.dev/)
-- [Documentation](https://ui.nuxt.com/docs/getting-started/installation/nuxt)
-
-<a href="https://landing-template.nuxt.dev/" target="_blank">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://ui.nuxt.com/assets/templates/nuxt/landing-dark.png">
-    <source media="(prefers-color-scheme: light)" srcset="https://ui.nuxt.com/assets/templates/nuxt/landing-light.png">
-    <img alt="Nuxt Landing Template" src="https://ui.nuxt.com/assets/templates/nuxt/landing-light.png">
-  </picture>
-</a>
-
-## Quick Start
-
-```bash [Terminal]
-npm create nuxt@latest -- -t ui/landing
-```
-
-## Deploy your own
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-name=landing&repository-url=https%3A%2F%2Fgithub.com%2Fnuxt-ui-templates%2Flanding&demo-image=https%3A%2F%2Fui.nuxt.com%2Fassets%2Ftemplates%2Fnuxt%2Flanding-dark.png&demo-url=https%3A%2F%2Flanding-template.nuxt.dev%2F&demo-title=Nuxt%20Landing%20Template&demo-description=A%20modern%20landing%20page%20template%20powered%20by%20Nuxt%20Content.)
-
-## Setup
-
-Make sure to install the dependencies:
+## Como rodar
 
 ```bash
-pnpm install
+pnpm install     # instala as dependências
+pnpm dev         # servidor de desenvolvimento em http://localhost:3000
+pnpm build       # gera a versão de produção
+pnpm preview     # testa a versão de produção localmente
+pnpm lint        # verifica o código
+pnpm typecheck   # verifica os tipos
 ```
 
-## Development Server
+## WhatsApp
 
-Start the development server on `http://localhost:3000`:
+O número usado em todos os botões fica em `nuxt.config.ts` (`runtimeConfig.public.whatsappNumber`). Para trocar sem mexer no código, crie um `.env` a partir do `.env.example` e defina `NUXT_PUBLIC_WHATSAPP_NUMBER`.
 
-```bash
-pnpm dev
-```
+## Onde mexer
 
-## Production
+| O quê | Onde |
+|---|---|
+| Textos, contatos, redes sociais, serviços, perguntas | `app/data/` |
+| Seções da página | `app/components/sections/` |
+| Cores, fontes e tema escuro | `app/assets/css/main.css` e `app/app.config.ts` |
+| Imagens, ícones e vídeo usados no site | `public/` |
+| Logo (ícone) | `public/images/logo-pj.webp`, usada em `app/components/AppLogo.vue` |
 
-Build the application for production:
+As mídias originais (logo em alta, fotos e vídeos brutos) ficam na pasta `imgs/`, que **não** vai para o Git.
 
-```bash
-pnpm build
-```
+## Documentação
 
-Locally preview production build:
+- `CLAUDE.md`: decisões do projeto, identidade visual e regras de conteúdo.
+- `docs/`: estrutura da página, design system e guia de domínio e entrega.
 
-```bash
-pnpm preview
-```
+## Licença
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
-
-## Renovate integration
-
-Install [Renovate GitHub app](https://github.com/apps/renovate/installations/select_target) on your repository and you are good to go.
+MIT, herdada do template original (ver `LICENSE`).

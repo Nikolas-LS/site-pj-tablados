@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-# TODO: quando o domínio estiver definido, publicar um sitemap.xml e acrescentar a linha:
+# Quando o domínio estiver definido, publicar um sitemap.xml e acrescentar a linha:
 # Sitemap: https://SEU-DOMINIO/sitemap.xml

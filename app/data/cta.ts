@@ -1,8 +1,9 @@
 import { contact } from './site'
 
 export const ctaSection = {
+  eyebrow: 'Fale com a gente',
   title: 'Vamos tirar seu projeto do papel?',
-  description: 'Chame a gente no WhatsApp, conte o tipo de obra e as medidas aproximadas e peça seu orçamento.',
+  description: 'Chame a gente no WhatsApp, conte o que você precisa e as medidas aproximadas e peça seu orçamento.',
   whatsappLabel: 'Chamar no WhatsApp'
 }
 

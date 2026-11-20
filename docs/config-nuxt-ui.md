@@ -19,7 +19,7 @@ export default defineNuxtConfig({
 
 ## 3. Arquivo assets/css/main.css
 
-Define as escalas de cor `musgo` (verde principal) e `madeira` (marrom de apoio), além das fontes.
+Define as escalas de cor `musgo` (verde-oliva da logo, principal) e `ouro` (dourado da logo, de apoio), além das fontes.
 
 ```css
 @import "tailwindcss";
@@ -29,31 +29,31 @@ Define as escalas de cor `musgo` (verde principal) e `madeira` (marrom de apoio)
   --font-sans: 'Inter', system-ui, sans-serif;
   --font-display: 'Montserrat', 'Inter', sans-serif;
 
-  /* Verde musgo (principal) - tom 700 = #1F4D3A */
-  --color-musgo-50: #eef5f1;
-  --color-musgo-100: #e3ede7;
-  --color-musgo-200: #c4dacf;
-  --color-musgo-300: #9bbfad;
-  --color-musgo-400: #6c9d85;
-  --color-musgo-500: #3f7a5f;
-  --color-musgo-600: #2e6049;
-  --color-musgo-700: #1f4d3a;
-  --color-musgo-800: #163828;
-  --color-musgo-900: #0f2a1e;
-  --color-musgo-950: #081a12;
+  /* Verde-oliva da logo (principal) - tom 700 = #202813, o fundo exato da logo */
+  --color-musgo-50: #f6f8f2;
+  --color-musgo-100: #eaefe1;
+  --color-musgo-200: #d4dec4;
+  --color-musgo-300: #b5c69a;
+  --color-musgo-400: #92ad67;
+  --color-musgo-500: #6e8943;
+  --color-musgo-600: #4b6029;
+  --color-musgo-700: #202813;
+  --color-musgo-800: #151a0c;
+  --color-musgo-900: #0f1309;
+  --color-musgo-950: #0a0c06;
 
-  /* Marrom amadeirado (apoio) - tom 600 = #8b5e3c */
-  --color-madeira-50: #f8f3ee;
-  --color-madeira-100: #e8d9c7;
-  --color-madeira-200: #d6bc9f;
-  --color-madeira-300: #c19c75;
-  --color-madeira-400: #a97b52;
-  --color-madeira-500: #96693f;
-  --color-madeira-600: #8b5e3c;
-  --color-madeira-700: #6f4a2f;
-  --color-madeira-800: #553724;
-  --color-madeira-900: #3b2619;
-  --color-madeira-950: #22150e;
+  /* Dourado da logo (apoio) - tom 400 = #ce9f60 */
+  --color-ouro-50: #faf6ef;
+  --color-ouro-100: #f3e7d8;
+  --color-ouro-200: #e8d2b5;
+  --color-ouro-300: #dbb88a;
+  --color-ouro-400: #ce9f60;
+  --color-ouro-500: #c3893c;
+  --color-ouro-600: #9c6e30;
+  --color-ouro-700: #795525;
+  --color-ouro-800: #5a3f1c;
+  --color-ouro-900: #3e2c13;
+  --color-ouro-950: #23190b;
 }
 
 :root {
@@ -81,14 +81,14 @@ h1, h2, h3 {
 
 ## 4. Arquivo app.config.ts
 
-Liga as cores aos papéis do Nuxt UI. O `primary` vira o verde musgo, o `secondary` vira o marrom madeira, e o `neutral` usa um cinza.
+Liga as cores aos papéis do Nuxt UI. O `primary` vira o verde musgo, o `secondary` vira o dourado, e o `neutral` usa um cinza.
 
 ```ts
 export default defineAppConfig({
   ui: {
     colors: {
       primary: 'musgo',
-      secondary: 'madeira',
+      secondary: 'ouro',
       success: 'green',
       info: 'sky',
       warning: 'amber',
@@ -107,9 +107,9 @@ export default defineAppConfig({
   <UButton color="primary" size="xl" label="Pedir orçamento" />
 
   <!-- Botão secundário com borda -->
-  <UButton color="primary" variant="outline" size="xl" label="Ver projetos" />
+  <UButton color="primary" variant="outline" size="xl" label="Ver serviços" />
 
-  <!-- Destaque em marrom madeira -->
+  <!-- Destaque em dourado -->
   <UBadge color="secondary" label="Madeira tratada" />
 
   <!-- Campo de formulário -->

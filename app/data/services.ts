@@ -1,29 +1,28 @@
 export const servicesSection = {
+  eyebrow: 'O que fazemos',
   title: 'Nossos serviços',
-  // TODO: confirmar a lista de serviços e as descrições com a empresa
-  description: 'TODO: lista provisória de serviços, a confirmar com a empresa.'
+  description: 'Tablados de madeira para eventos: venda e fabricação sob medida.'
 }
 
-// TODO: trocar as imagens de exemplo por fotos reais das obras (horizontais, em WebP)
+// Serviços confirmados pelo cliente: venda de tablados e fabricação sob medida.
+// Revisar as descrições com os donos
 export const services = [
   {
-    title: 'Tablados',
-    description: 'Tablados de madeira feitos sob medida para o seu espaço.',
-    image: { src: '/images/exemplo/servico-tablados.svg', alt: 'Tablado de madeira com degrau (imagem de exemplo)' }
+    title: 'Venda de tablados',
+    description: 'Tablados de madeira para o seu evento.',
+    image: {
+      src: '/images/evento-gramado.webp',
+      alt: 'Tablado de madeira montado sob uma tenda, em um evento ao ar livre',
+      position: 'object-[50%_62%]'
+    }
   },
   {
-    title: 'Decks',
-    description: 'Decks para jardins, piscinas e áreas externas, com acabamento caprichado.',
-    image: { src: '/images/exemplo/servico-decks.svg', alt: 'Deck de madeira com mesa e cadeiras (imagem de exemplo)' }
-  },
-  {
-    title: 'Pisos externos',
-    description: 'Pisos de madeira para varandas, quintais e áreas de convivência.',
-    image: { src: '/images/exemplo/servico-pisos.svg', alt: 'Piso externo de madeira visto de cima (imagem de exemplo)' }
-  },
-  {
-    title: 'Manutenção e restauração',
-    description: 'Reparo, lixamento e nova proteção para devolver a beleza à madeira.',
-    image: { src: '/images/exemplo/servico-manutencao.svg', alt: 'Piso de madeira meio desgastado, meio restaurado (imagem de exemplo)' }
+    title: 'Fabricação sob medida',
+    description: 'Tablados e painéis feitos nas medidas que o seu projeto pede.',
+    image: {
+      src: '/images/paineis-patio.webp',
+      alt: 'Painéis de tablado de madeira fabricados pela PJ Tablados, no pátio da empresa',
+      position: 'object-[50%_72%]'
+    }
   }
 ]

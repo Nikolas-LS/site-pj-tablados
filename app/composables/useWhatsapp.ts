@@ -1,6 +1,6 @@
 import { whatsappMessage } from '~/data/site'
 
-// Único ponto que monta links de WhatsApp. O número vem da variável NUXT_PUBLIC_WHATSAPP_NUMBER.
+// Único ponto que monta links de WhatsApp. O número vem do nuxt.config.ts e pode ser trocado pela variável NUXT_PUBLIC_WHATSAPP_NUMBER.
 export function useWhatsapp() {
   const config = useRuntimeConfig()
 

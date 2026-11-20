@@ -14,7 +14,7 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/main.css'],
 
-  // A identidade visual é só clara; evita o modo escuro automático do sistema
+  // O tema claro é o padrão. O visitante pode escolher o escuro no botão do cabeçalho (a escolha fica salva no navegador)
   colorMode: {
     preference: 'light',
     fallback: 'light'
@@ -32,10 +32,11 @@ export default defineNuxtConfig({
     }
   },
 
-  // Valores vêm de variáveis de ambiente (ver .env.example), nunca do código
+  // O número do WhatsApp pode ser trocado por variável de ambiente (ver .env.example)
   runtimeConfig: {
     public: {
-      whatsappNumber: ''
+      // Mesmo número da logo. Pode ser trocado pela variável NUXT_PUBLIC_WHATSAPP_NUMBER
+      whatsappNumber: '51986863981'
     }
   },
 

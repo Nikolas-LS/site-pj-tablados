@@ -1,25 +1,25 @@
 # Design System PJ Tablados
 
-Direção visual para o site e materiais da PJ Tablados: natural, firme e acolhedora, com base no verde musgo escuro da logo e no marrom amadeirado da madeira.
+Direção visual para o site e materiais da PJ Tablados: natural, firme e acolhedora, com base no verde-oliva escuro e no dourado da logo.
 
 ## 1. Princípios
 
 - **Natural:** cores terrosas e verdes que lembram madeira e jardim.
 - **Firme:** tipografia forte e bordas pouco arredondadas, passando solidez e durabilidade.
-- **Limpo:** muito espaço em branco e fotos grandes de obras e decks.
+- **Limpo:** muito espaço em branco e fotos grandes dos tablados e da produção.
 - **Confiável:** contraste alto, textos legíveis e botões claros para pedir orçamento.
 
 ## 2. Paleta de cores
 
-Os códigos são aproximados. Conferir o verde exato direto no arquivo da logo.
+Os códigos principais foram medidos no arquivo da logo (`imgs/logo.png`).
 
 | Função | Nome | Código |
 |---|---|---|
-| Principal | Verde musgo | #1F4D3A |
-| Principal escuro (hover) | Verde floresta | #163828 |
-| Principal claro (fundos suaves) | Verde sálvia | #E3EDE7 |
-| Apoio | Marrom amadeirado | #8B5E3C |
-| Apoio claro | Bege madeira | #E8D9C7 |
+| Principal | Verde-oliva da logo | #202813 |
+| Principal escuro (rodapé) | Verde-oliva profundo | #151A0C |
+| Principal claro (fundos suaves) | Verde-oliva claro | #EAEFE1 |
+| Apoio | Dourado da logo | #CE9F60 (sobre fundo escuro) / #9C6E30 (sobre claro) |
+| Apoio claro | Dourado claro | #F3E7D8 |
 | Fundo | Branco | #FFFFFF |
 | Fundo alternativo | Off-white quente | #F7F5F0 |
 | Texto | Cinza esverdeado escuro | #1C2420 |
@@ -28,7 +28,7 @@ Os códigos são aproximados. Conferir o verde exato direto no arquivo da logo.
 | Sucesso | Verde vivo | #2E7D4F |
 | Erro | Vermelho terroso | #B3402F |
 
-**Uso sugerido:** verde musgo em botões principais, cabeçalho e rodapé; marrom em detalhes, ícones e destaques; off-white como fundo de seções alternadas.
+**Uso sugerido:** verde musgo em botões principais, cabeçalho e rodapé; dourado em detalhes, ícones e filetes; off-white como fundo de seções alternadas.
 
 ## 3. Tipografia
 
@@ -67,8 +67,6 @@ Todas gratuitas no Google Fonts.
 
 ### Cartões
 - Cartão de serviço: foto, título, descrição curta e link.
-- Cartão de projeto: foto grande de antes e depois, local e tipo de madeira.
-- Cartão de depoimento: texto, nome e cidade do cliente.
 
 ### Navegação
 - Cabeçalho branco com logo à esquerda, menu enxuto e botão "Pedir orçamento" à direita.
@@ -76,12 +74,10 @@ Todas gratuitas no Google Fonts.
 
 ### Seções recomendadas para o site
 1. Hero com foto grande de um tablado pronto e botão de orçamento.
-2. Serviços: decks, tablados, pisos externos, manutenção.
-3. Galeria de obras.
-4. Diferenciais: madeira tratada, garantia, prazo.
-5. Depoimentos.
-6. Perguntas frequentes.
-7. Contato e orçamento.
+2. Serviços: venda de tablados e fabricação sob medida.
+3. Diferenciais: madeira tratada, garantia, prazo.
+4. Perguntas frequentes.
+5. Contato e orçamento.
 
 ## 6. Imagens e ícones
 
@@ -97,4 +93,4 @@ Todas gratuitas no Google Fonts.
 
 ## 8. Implementação com Nuxt e Tailwind
 
-Definir as cores no tema do Tailwind com nomes como musgo, floresta, sálvia, madeira e bege, e reaproveitar nos componentes. Nuxt UI ou shadcn podem servir de base de componentes, só trocando as cores pelo tema da PJ Tablados.
+Definir as cores no tema do Tailwind com nomes como musgo (verde-oliva) e ouro (dourado), e reaproveitar nos componentes. Nuxt UI ou shadcn podem servir de base de componentes, só trocando as cores pelo tema da PJ Tablados.

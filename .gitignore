@@ -25,3 +25,6 @@ logs
 
 #VSC
 .history
+
+# Mídias originais do cliente (logo, fotos e vídeos brutos). Os arquivos usados no site ficam em public/
+imgs

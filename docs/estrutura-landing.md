@@ -7,7 +7,7 @@ Estrutura base, genérica, para ajustar depois com os serviços reais e os dados
 **Objetivo:** identificar a marca e dar acesso rápido ao orçamento.
 
 - Logo da PJ Tablados à esquerda.
-- Menu enxuto: Início, Serviços, Projetos, Sobre, Contato.
+- Menu com as seções da página, na ordem: Início, Serviços, Sobre, Diferenciais, Perguntas, Contato.
 - Botão "Pedir orçamento" em verde musgo à direita.
 - Fixo no topo ao rolar a página.
 
@@ -15,9 +15,9 @@ Estrutura base, genérica, para ajustar depois com os serviços reais e os dados
 
 **Objetivo:** explicar em segundos o que a empresa faz e chamar para a ação.
 
-- Título forte, por exemplo: "Tablados e decks de madeira com qualidade e durabilidade".
+- Título forte, por exemplo: "Tablados de madeira para eventos, com qualidade e durabilidade".
 - Subtítulo curto com o diferencial principal e a região atendida.
-- Dois botões: "Pedir orçamento" (principal) e "Ver projetos" (secundário).
+- Dois botões: "Pedir orçamento" (principal) e "Ver serviços" (secundário).
 - Foto grande de um tablado pronto, com boa luz.
 
 ## 3. Faixa de confiança
@@ -32,7 +32,7 @@ Estrutura base, genérica, para ajustar depois com os serviços reais e os dados
 **Objetivo:** mostrar o que a empresa oferece.
 
 - Cartões com foto, título e descrição curta de cada serviço.
-- Sugestão genérica: tablados, decks, pisos externos, manutenção e restauração.
+- Serviços confirmados pelo cliente: venda de tablados e fabricação sob medida.
 - Cada cartão com link "Saiba mais" ou "Pedir orçamento".
 
 ## 5. Sobre a empresa
@@ -50,36 +50,14 @@ Estrutura base, genérica, para ajustar depois com os serviços reais e os dados
 - Grade de três a seis itens com ícone, título e uma linha de explicação.
 - Exemplos: madeira selecionada e tratada, acabamento caprichado, prazo combinado, garantia do serviço, orçamento sem compromisso.
 
-## 7. Galeria de projetos
-
-**Objetivo:** provar a qualidade com obras reais.
-
-- Grade de fotos horizontais, com opção de ampliar.
-- Se possível, fotos de antes e depois.
-- Legenda com local e tipo de obra.
-
-## 8. Como funciona
-
-**Objetivo:** reduzir a insegurança de quem vai contratar.
-
-- Quatro passos: 1) Contato e conversa inicial, 2) Visita e medição, 3) Orçamento e aprovação, 4) Execução e entrega.
-- Visual em linha do tempo, com números em verde musgo.
-
-## 9. Depoimentos
-
-**Objetivo:** prova social.
-
-- Dois a três depoimentos curtos com nome e cidade do cliente.
-- Se tiver, nota ou avaliações do Google.
-
-## 10. Perguntas frequentes
+## 7. Perguntas frequentes
 
 **Objetivo:** tirar dúvidas comuns e evitar mensagens repetidas.
 
-- Perguntas sugeridas: que madeira vocês usam, qual o prazo médio, atendem minha cidade, como é feita a manutenção, como peço orçamento.
+- Perguntas sugeridas: que madeira vocês usam, qual o prazo médio, atendem minha cidade, se fazem tablados sob medida, como peço orçamento.
 - Formato sanfona, abrindo uma resposta por vez.
 
-## 11. Chamada final com WhatsApp e mapa
+## 8. Chamada final com WhatsApp e mapa
 
 **Objetivo:** converter o visitante em contato.
 
@@ -88,18 +66,17 @@ Estrutura base, genérica, para ajustar depois com os serviços reais e os dados
 - Botão grande de WhatsApp, com a mensagem de orçamento pronta.
 - Endereço da empresa, botão "Como chegar" e mapa do Google incorporado ao lado.
 
-## 12. Rodapé
+## 9. Rodapé
 
 **Objetivo:** reunir informações de contato e navegação.
 
-- Logo, descrição curta, links do menu.
-- Telefone, WhatsApp, e-mail, endereço ou região atendida e horário.
-- Redes sociais e direitos autorais.
+- Só a logo, sem descrição nem menu de navegação (a pedido do cliente).
+- Contato (WhatsApp, telefone e redes sociais), endereço e região atendida.
+- Direitos autorais.
 
 ## Elementos fixos
 
-- **Botão flutuante de WhatsApp** no canto inferior direito, visível em todas as seções, principalmente no celular.
-- **Menu mobile** em formato de hambúrguer, com o botão de orçamento sempre acessível.
+- **Menu mobile** em painel lateral que abre deslizando, com os links e as redes sociais. Não há botão flutuante de WhatsApp.
 
 ## Pontos a definir depois
 
@@ -107,4 +84,3 @@ Estrutura base, genérica, para ajustar depois com os serviços reais e os dados
 - Contato principal (WhatsApp, telefone, e-mail) e região de atendimento.
 - Fotos reais de obras e da equipe.
 - Anos de experiência, números e garantias reais para a faixa de confiança.
-- Depoimentos verdadeiros de clientes.

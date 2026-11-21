@@ -12,7 +12,7 @@ import { services, servicesSection } from '~/data/services'
       position="top"
     />
 
-    <UContainer class="relative py-16 sm:py-20 lg:py-24">
+    <UContainer class="relative py-12 sm:py-20 lg:py-24">
       <SectionHeading
         :eyebrow="servicesSection.eyebrow"
         :title="servicesSection.title"
@@ -23,6 +23,7 @@ import { services, servicesSection } from '~/data/services'
         <li
           v-for="(service, index) in services"
           :key="service.title"
+          v-reveal
         >
           <UCard
             class="group h-full transition-shadow duration-300 hover:shadow-lg motion-safe:transition-transform motion-safe:hover:-translate-y-1"
@@ -36,6 +37,7 @@ import { services, servicesSection } from '~/data/services'
             <template #header>
               <div class="overflow-hidden">
                 <img
+                  v-reveal:settle
                   :src="service.image.src"
                   :alt="service.image.alt"
                   width="800"
@@ -59,10 +61,11 @@ import { services, servicesSection } from '~/data/services'
 
             <template #footer>
               <QuoteButton
+                :label="service.cta.label"
                 trailing-icon="i-lucide-arrow-right"
                 variant="link"
                 size="lg"
-                class="min-h-11 px-0"
+                class="min-h-[44px] px-0"
               />
             </template>
           </UCard>

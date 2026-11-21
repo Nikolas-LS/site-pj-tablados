@@ -9,7 +9,10 @@ const linkClass = 'rounded-sm underline-offset-4 hover:underline focus-visible:o
 <template>
   <footer class="focus-ring-light border-t border-ouro-400/40 bg-musgo-800 dark:bg-musgo-950 text-white">
     <UContainer class="py-12 lg:py-16">
-      <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1fr_1fr_auto]">
+      <div
+        v-reveal:stagger
+        class="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1fr_1fr_auto]"
+      >
         <div class="lg:self-center">
           <AppLogo class="text-white" />
         </div>
@@ -29,7 +32,7 @@ const linkClass = 'rounded-sm underline-offset-4 hover:underline focus-visible:o
                 :href="whatsapp.link()"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-flex min-h-10 items-center"
+                class="inline-flex min-h-[40px] items-center"
                 :class="linkClass"
               >
                 WhatsApp
@@ -43,7 +46,7 @@ const linkClass = 'rounded-sm underline-offset-4 hover:underline focus-visible:o
               />
               <a
                 :href="contact.phoneHref"
-                class="inline-flex min-h-10 items-center"
+                class="inline-flex min-h-[40px] items-center"
                 :class="linkClass"
               >
                 {{ contact.phone }}
@@ -64,7 +67,7 @@ const linkClass = 'rounded-sm underline-offset-4 hover:underline focus-visible:o
                 target="_blank"
                 rel="noopener noreferrer"
                 :aria-label="network.label"
-                class="inline-flex size-11 items-center justify-center rounded-md hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-white"
+                class="inline-flex size-[44px] items-center justify-center rounded-md hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-white"
               >
                 <UIcon
                   :name="network.icon"

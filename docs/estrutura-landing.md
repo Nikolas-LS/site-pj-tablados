@@ -4,11 +4,11 @@ Estrutura base, genérica, para ajustar depois com os serviços reais e os dados
 
 ## 1. Cabeçalho (header)
 
-**Objetivo:** identificar a marca e dar acesso rápido ao orçamento.
+**Objetivo:** identificar a marca e dar acesso rápido às seções da página.
 
 - Logo da PJ Tablados à esquerda.
 - Menu com as seções da página, na ordem: Início, Serviços, Sobre, Diferenciais, Perguntas, Contato.
-- Botão "Pedir orçamento" em verde musgo à direita.
+- À direita, só o alternador de tema (o botão "Pedir orçamento" foi removido do cabeçalho).
 - Fixo no topo ao rolar a página.
 
 ## 2. Hero (primeira dobra)
@@ -17,7 +17,7 @@ Estrutura base, genérica, para ajustar depois com os serviços reais e os dados
 
 - Título forte, por exemplo: "Tablados de madeira para eventos, com qualidade e durabilidade".
 - Subtítulo curto com o diferencial principal e a região atendida.
-- Dois botões: "Pedir orçamento" (principal) e "Ver serviços" (secundário).
+- Dois botões: "Solicitar proposta" (principal) e "Conhecer serviços" (secundário).
 - Foto grande de um tablado pronto, com boa luz.
 
 ## 3. Faixa de confiança
@@ -33,7 +33,7 @@ Estrutura base, genérica, para ajustar depois com os serviços reais e os dados
 
 - Cartões com foto, título e descrição curta de cada serviço.
 - Serviços confirmados pelo cliente: venda de tablados e fabricação sob medida.
-- Cada cartão com link "Saiba mais" ou "Pedir orçamento".
+- Cada cartão com o seu botão de contato: "Consultar valores" na venda e "Contar meu projeto" na fabricação.
 
 ## 5. Sobre a empresa
 

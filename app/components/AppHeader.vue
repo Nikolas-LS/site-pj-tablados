@@ -88,7 +88,7 @@ const menuUi = {
       <NuxtLink
         to="/"
         :aria-label="`${site.name}, página inicial`"
-        class="-ms-1 inline-flex min-h-11 items-center rounded-md p-1 whitespace-nowrap focus-visible:outline-3"
+        class="-ms-1 inline-flex min-h-[44px] items-center rounded-md p-1 whitespace-nowrap focus-visible:outline-3"
       >
         <AppLogo class="text-primary" />
       </NuxtLink>
@@ -117,7 +117,6 @@ const menuUi = {
 
     <template #right>
       <ColorModeToggle />
-      <QuoteButton class="hidden lg:flex" />
     </template>
 
     <template #toggle="{ open, toggle, ui }">
@@ -128,7 +127,7 @@ const menuUi = {
         square
         :aria-label="open ? 'Fechar menu' : 'Abrir menu'"
         :aria-expanded="open"
-        class="min-h-11 min-w-11"
+        class="min-h-[44px] min-w-[44px]"
         :class="ui.toggle({ toggleSide: 'right' })"
         @click="toggle"
       >
@@ -186,7 +185,7 @@ const menuUi = {
           size="lg"
           square
           aria-label="Fechar menu"
-          class="min-h-11 min-w-11 text-white hover:bg-white/10"
+          class="min-h-[44px] min-w-[44px] text-white hover:bg-white/10"
           @click="menuOpen = false"
         />
       </div>
@@ -242,7 +241,7 @@ const menuUi = {
               target="_blank"
               rel="noopener noreferrer"
               :aria-label="network.label"
-              class="inline-flex size-11 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-2"
+              class="inline-flex size-[44px] items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-2"
             >
               <UIcon
                 :name="network.icon"

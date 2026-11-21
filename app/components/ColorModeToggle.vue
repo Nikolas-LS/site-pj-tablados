@@ -17,13 +17,13 @@ function toggle() {
       variant="ghost"
       square
       size="lg"
-      class="size-11 rounded-full hover:bg-transparent active:bg-transparent hover:text-primary"
+      class="size-[44px] rounded-full hover:bg-transparent active:bg-transparent hover:text-primary"
       :aria-label="isDark ? 'Ativar o tema claro' : 'Ativar o tema escuro'"
       @click="toggle"
     />
     <template #fallback>
       <div
-        class="size-11"
+        class="size-[44px]"
         aria-hidden="true"
       />
     </template>

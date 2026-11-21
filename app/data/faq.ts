@@ -8,22 +8,22 @@ export const faqSection = {
 export const faqItems = [
   {
     label: 'Que madeira vocês usam?',
-    content: 'Trabalhamos com madeira selecionada para tablados. Conte para a gente como será o seu evento e indicamos a melhor opção pelo WhatsApp.'
+    content: 'Trabalhamos com madeira selecionada para tablados. Conte como será a ocasião e indicamos a melhor opção para o seu caso.'
   },
   {
     label: 'Qual o prazo de entrega?',
-    content: 'O prazo depende do tamanho e do tipo de tablado. Combinamos a data com você já no orçamento.'
+    content: 'Depende do tamanho e do tipo de tablado. A data é combinada com você antes de fechar.'
   },
   {
     label: 'Vocês atendem a minha cidade?',
-    content: 'Sim, atendemos todo o Brasil. Fale com a gente pelo WhatsApp e conte onde será o seu evento.'
+    content: 'Sim, atendemos todo o Brasil. Basta nos dizer onde será a montagem.'
   },
   {
-    label: 'Vocês fazem tablados sob medida?',
-    content: 'Sim. Fabricamos tablados nas medidas que você precisa. É só contar as medidas pelo WhatsApp para pedir o orçamento.'
+    label: 'Dá para personalizar o tablado?',
+    content: 'Sim. Fabricamos nas dimensões que você precisa. É só nos enviar as medidas do local.'
   },
   {
-    label: 'Como peço um orçamento?',
-    content: 'É só chamar a gente pelo WhatsApp, contando o que você precisa e as medidas aproximadas. Respondemos com o orçamento.'
+    label: 'Como faço para pedir uma proposta?',
+    content: 'Mande uma mensagem pelo WhatsApp, conte o que procura e as medidas aproximadas. Respondemos com os valores.'
   }
 ]

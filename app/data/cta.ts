@@ -3,8 +3,8 @@ import { contact } from './site'
 export const ctaSection = {
   eyebrow: 'Fale com a gente',
   title: 'Vamos tirar seu projeto do papel?',
-  description: 'Chame a gente no WhatsApp, conte o que você precisa e as medidas aproximadas e peça seu orçamento.',
-  whatsappLabel: 'Chamar no WhatsApp'
+  description: 'Conte o que você procura e as medidas aproximadas, e nós retornamos com os preços.',
+  whatsappLabel: 'Conversar no WhatsApp'
 }
 
 export const location = {

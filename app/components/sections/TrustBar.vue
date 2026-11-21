@@ -9,7 +9,10 @@ import { trustItems } from '~/data/trust'
     class="focus-ring-light border-y border-ouro-400/30 bg-musgo-700 text-white"
   >
     <UContainer class="py-10 sm:py-12">
-      <ul class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      <ul
+        v-reveal:stagger
+        class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4"
+      >
         <li
           v-for="item in trustItems"
           :key="item.title"

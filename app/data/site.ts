@@ -16,7 +16,7 @@ export const navItems = [
   { label: 'Contato', to: '#contato' }
 ]
 
-export const whatsappMessage = 'Olá, quero um orçamento de tablado'
+export const whatsappMessage = 'Olá! Gostaria de conhecer as opções e os valores dos tablados.'
 
 // Dados de contato. O telefone (o mesmo da logo), o endereço e a região atendida (todo o Brasil) vieram do cliente.
 export const contact = {
@@ -32,7 +32,8 @@ export const social: { label: string, icon: string, to: string }[] = [
   { label: 'Facebook', icon: 'i-simple-icons-facebook', to: 'https://www.facebook.com/share/1CPh7A8GwV/' }
 ]
 
-// Texto do botão de orçamento. O destino é o WhatsApp (ver components/QuoteButton.vue)
+// Texto padrão do botão de proposta. O destino é o WhatsApp (ver components/QuoteButton.vue).
+// Cada seção usa o seu próprio texto (hero, serviços, sobre), para o site não repetir a mesma frase.
 export const quoteCta = {
-  label: 'Pedir orçamento'
+  label: 'Solicitar proposta'
 }

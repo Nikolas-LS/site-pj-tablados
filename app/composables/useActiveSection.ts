@@ -7,7 +7,8 @@ export function useActiveSection(ids: string[]) {
 
   function update() {
     frame = 0
-    const headerHeight = 64
+    // A altura do cabeçalho muda com o tamanho da base (celular x desktop), então é medida de verdade
+    const headerHeight = document.querySelector('header')?.getBoundingClientRect().height ?? 64
     const line = headerHeight + window.innerHeight * 0.35
     let current = ids[0] ?? null
     for (const id of ids) {

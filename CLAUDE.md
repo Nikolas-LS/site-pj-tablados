@@ -56,6 +56,7 @@ Direção: natural, firme, limpa e confiável, com base no verde-oliva escuro e 
 - **Tema claro e escuro:** o claro é o padrão. O escuro é opcional, escolhido no botão (sol/lua) do cabeçalho, e a escolha fica salva no navegador. O escuro usa a mesma paleta: fundo `musgo-900`/`800`, texto creme `#F0EEEA` e dourado (`ouro-400`) como cor de destaque e dos botões. As variáveis ficam no bloco `.dark` do `main.css`. Blocos de marca (faixa de confiança, contato, rodapé, painel do celular) usam `bg-musgo-700`/`text-white` fixos, iguais nos dois temas. Em componentes novos use as cores semânticas (`bg-default`, `text-muted`, `text-primary`...) e, se usar `ouro-700` ou `ouro-100` no claro, acrescente a variante `dark:`.
 - **Seção atual no menu:** o item do cabeçalho (e do painel do celular) da seção que está na tela fica marcado (texto escuro e uma linha dourada única que cresce do centro ao aparecer e desliza entre os itens ao trocar de seção, a ~2 px do texto, no desktop; texto dourado no painel). Vem de `useActiveSection` e usa os ids das seções; ao criar uma seção nova com link no menu, basta pôr o link em `navItems` com o mesmo id.
 - **Assinatura visual das seções:** rótulo dourado em caixa alta (`SectionEyebrow`), título, filete dourado curto, losangos da logo nos cantos só em telas grandes (`SectionDiamonds`) e moldura dourada deslocada atrás de fotos, vídeo e mapa. `SectionHeading` já traz rótulo e filete. Movimento sempre sutil (hover de 4 px, zoom leve na foto) e desligado com "reduzir movimento".
+- **Efeitos de entrada:** suaves (18 px de movimento, ~0,75 s). Abertura do topo (`Hero`): só CSS, classes `intro`, `intro-grow`, `intro-settle`, `intro-frame` e `style="--i: n"` para a ordem; a foto principal nunca começa transparente (só "assenta"), para não atrasar o LCP (medido em ~200 ms). No resto da página: diretiva `v-reveal` (`plugins/reveal.ts`) em cada componente, nunca na seção inteira. Variações: `v-reveal` (sobe), `:left`/`:right` (vira "sobe" abaixo de 1024 px), `:zoom` (ícones), `:grow` (filete), `:settle` (foto), `:frame` (moldura dourada sai de trás da foto, com `[--frame-x:12px]` quando fica à esquerda) e `:stagger` no pai de uma lista (filhos em cascata). O valor é um atraso extra em ms. Irmãos que entram juntos surgem em sequência. O estilo de entrada é removido depois da animação (hover do elemento volta ao normal). Não aplicar em elementos finos colados no fim da página (a diretiva espera ~6% de folga no pé da tela). Em `prefers-reduced-motion` nada é escondido nem animado, e o HTML gerado nunca nasce escondido.
 - Bordas pouco arredondadas: 6 px em botões e campos, 10 px em cartões.
 - Sombras suaves e discretas.
 - Espaçamento em múltiplos de 8 px, conteúdo com largura máxima de 1200 px.
@@ -65,22 +66,22 @@ Direção: natural, firme, limpa e confiável, com base no verde-oliva escuro e 
 
 Implementar nesta ordem, uma seção por componente, em `app/components/sections/`:
 
-1. **Cabeçalho:** logo à esquerda, menu (Início, Serviços, Sobre, Diferenciais, Perguntas, Contato), botão "Pedir orçamento", fixo no topo, no celular, menu em painel lateral verde-oliva (abre deslizando, links numerados e redes sociais; sem logo, botão de orçamento, endereço ou tagline).
-2. **Hero:** título forte, subtítulo curto, botões "Pedir orçamento" e "Ver serviços", foto grande de tablado pronto.
+1. **Cabeçalho:** logo à esquerda, menu (Início, Serviços, Sobre, Diferenciais, Perguntas, Contato), alternador de tema (sem botão de orçamento, removido a pedido do cliente), fixo no topo; no celular, menu em painel lateral verde-oliva (abre deslizando, links numerados e redes sociais; sem logo, botão de orçamento, endereço ou tagline).
+2. **Hero:** título forte, subtítulo curto, botões "Solicitar proposta" e "Conhecer serviços", foto grande de tablado pronto.
 3. **Faixa de confiança:** de três a quatro números ou selos (experiência, obras, madeira tratada, garantia).
 4. **Serviços:** dois cartões com foto real, título e descrição: venda de tablados e fabricação sob medida (serviços confirmados pelo cliente).
-5. **Sobre a empresa:** título, um parágrafo de apresentação e três valores, com o vídeo da oficina ao lado (em loop, sem som e só com botão de pausar) e botão de orçamento. Sem frase de abertura e sem citação (a pedido do cliente).
+5. **Sobre a empresa:** título, um parágrafo de apresentação e três valores, com o vídeo da oficina ao lado (em loop, sem som e só com botão de pausar) e botão de proposta. Sem frase de abertura e sem citação (a pedido do cliente).
 6. **Diferenciais:** grade de três a seis itens com ícone e uma linha de texto.
 7. **Perguntas frequentes:** formato sanfona.
 8. **Chamada final:** fundo verde musgo, botão de WhatsApp, endereço com botão "Como chegar" e mapa do Google incorporado.
 9. **Rodapé:** logo, contato (WhatsApp, telefone e redes sociais), endereço e região atendida. Sem menu de navegação, sem frase da logo e sem descrição da empresa (a pedido do cliente).
 
-**Elementos fixos:** só o cabeçalho. Não há botão flutuante de WhatsApp (removido a pedido do cliente). O pedido de orçamento fica nos botões "Pedir orçamento" e na seção de contato.
+**Elementos fixos:** só o cabeçalho. Não há botão flutuante de WhatsApp (removido a pedido do cliente). O pedido de proposta fica nos botões de cada seção (cada um com texto próprio) e na seção de contato.
 
 ## WhatsApp e mapa
 
 - WhatsApp por link direto no formato `https://wa.me/55DDDNUMERO?text=...`, com mensagem pronta como "Olá, quero um orçamento de tablado". O número deve vir de uma variável de ambiente ou de um arquivo de configuração único, nunca espalhado pelo código.
-- Todos os botões "Pedir orçamento" usam `components/QuoteButton.vue` e abrem o WhatsApp. O mapa vem do endereço em `app/data/site.ts` (`contact.address`), incorporado sem chave de API.
+- Todos os botões de proposta usam `components/QuoteButton.vue` (texto padrão "Solicitar proposta", trocado pela prop `label`) e abrem o WhatsApp. O mapa vem do endereço em `app/data/site.ts` (`contact.address`), incorporado sem chave de API.
 
 ## Convenções de código
 
@@ -96,7 +97,7 @@ Implementar nesta ordem, uma seção por componente, em `app/components/sections
 
 - Contraste alto: texto branco sobre verde musgo é permitido; conferir qualquer outra combinação.
 - Todas as imagens com texto alternativo descritivo.
-- Botões com no mínimo 44 px de altura no celular.
+- Botões com no mínimo 44 px de altura no celular. No celular a base de tamanho é 14 px (`html` em `main.css`, abaixo de 640 px), então tudo em rem encolhe; por isso as áreas de toque usam px fixos (`min-h-[44px]`, `size-[44px]`) e não rem. A margem lateral do conteúdo no celular é de 28 px (`container.base` em `app.config.ts`).
 - Navegação completa por teclado e foco visível.
 - Imagens em formato WebP ou AVIF, com carregamento preguiçoso fora da primeira dobra (usar `NuxtImg` se o módulo de imagem estiver instalado).
 - Meta tags de SEO (título, descrição, Open Graph), idioma `pt-BR` e dados estruturados de negócio local quando houver informações reais.
@@ -108,6 +109,7 @@ Implementar nesta ordem, uma seção por componente, em `app/components/sections
 - Trabalhar uma seção por vez, explicando em poucas linhas o que foi feito.
 - Antes de mudanças grandes (estrutura de pastas, troca de biblioteca, novas dependências), perguntar primeiro.
 - Não inventar números, prazos, garantias ou horários da empresa. Sem dado confirmado, usar texto geral e verdadeiro (nunca deixar `TODO` visível no site) e anotar em comentário "Revisar com os donos".
+- Variar o vocabulário: evitar repetir as mesmas palavras e frases no site (orçamento, sob medida, evento, "chame no WhatsApp"). O botão de proposta (`QuoteButton`) recebe um texto próprio em cada seção (prop `label`), "sob medida" só aparece no nome do serviço e "WhatsApp" fica no contato, no rodapé e em uma resposta do FAQ. Conferir a contagem das palavras no HTML gerado ao mexer nos textos.
 - Não adicionar dependências sem necessidade.
 - Seguir sempre as cores e regras visuais deste arquivo.
 - Depois de editar, rodar o build e a checagem de tipos e relatar qualquer erro.

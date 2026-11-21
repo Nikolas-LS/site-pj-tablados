@@ -2,38 +2,38 @@
 export const differentialsSection = {
   eyebrow: 'Diferenciais',
   title: 'Por que escolher a PJ Tablados',
-  description: 'Tablados de madeira pensados para o seu evento, do orçamento à entrega.'
+  description: 'Atenção a cada etapa, da primeira conversa à entrega.'
 }
 
 export const differentials = [
   {
     icon: 'i-lucide-tree-pine',
     title: 'Madeira selecionada',
-    description: 'Madeira escolhida com cuidado, pensada para durar.'
+    description: 'Escolhida com cuidado, pensada para durar.'
   },
   {
     icon: 'i-lucide-sparkles',
     title: 'Acabamento caprichado',
-    description: 'Atenção aos detalhes, do encaixe das tábuas ao acabamento final.'
+    description: 'Atenção aos detalhes, do encaixe das tábuas ao toque final.'
   },
   {
     icon: 'i-lucide-calendar-clock',
-    title: 'Prazo combinado',
-    description: 'A data de entrega é definida com você já no orçamento.'
+    title: 'Data marcada',
+    description: 'A data de entrega é definida com você desde o início.'
   },
   {
     icon: 'i-lucide-headset',
     title: 'Atendimento direto',
-    description: 'Você fala com a nossa equipe pelo WhatsApp, sem intermediários.'
+    description: 'Sem intermediários: a conversa é com quem cuida do seu pedido.'
   },
   {
     icon: 'i-lucide-ruler',
-    title: 'Feito sob medida',
-    description: 'Tablados fabricados nas medidas do seu projeto.'
+    title: 'Formato exclusivo',
+    description: 'Dimensões e formato pensados para o seu espaço.'
   },
   {
     icon: 'i-lucide-file-check',
-    title: 'Orçamento sem compromisso',
-    description: 'Você recebe a proposta com clareza, sem pressão para fechar.'
+    title: 'Proposta sem compromisso',
+    description: 'Você recebe os valores com clareza, sem pressão para fechar.'
   }
 ]

@@ -13,32 +13,48 @@ import { site } from '~/data/site'
       position="bottom"
     />
 
-    <UContainer class="relative grid items-center gap-12 py-12 sm:py-16 lg:grid-cols-2 lg:gap-16 lg:py-24">
+    <UContainer class="relative grid items-center gap-10 py-10 sm:py-16 lg:grid-cols-2 lg:gap-16 lg:py-24">
       <div>
-        <SectionEyebrow>
+        <SectionEyebrow
+          class="intro"
+          style="--i: 0"
+        >
           {{ site.tagline }}
         </SectionEyebrow>
-        <h1 class="mt-3 text-[2.5rem] leading-tight font-bold text-highlighted sm:text-5xl">
+        <h1
+          class="intro mt-3 text-[2.125rem] leading-tight font-bold text-highlighted sm:text-5xl"
+          style="--i: 1"
+        >
           {{ hero.title }}
         </h1>
-        <div class="mt-6 h-1 w-14 rounded-full bg-ouro-400" />
+        <div
+          class="intro-grow mt-6 h-1 w-14 origin-left rounded-full bg-ouro-400"
+          style="--i: 2"
+        />
 
-        <p class="mt-6 max-w-xl text-base text-muted sm:text-lg">
+        <p
+          class="intro mt-6 max-w-xl text-base text-muted sm:text-lg"
+          style="--i: 3"
+        >
           {{ hero.description }}
         </p>
 
-        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+        <div
+          class="intro mt-8 flex flex-col gap-3 sm:flex-row"
+          style="--i: 4"
+        >
           <QuoteButton
+            :label="hero.primaryCta.label"
             size="xl"
             trailing-icon="i-lucide-arrow-right"
-            class="min-h-11 justify-center"
+            class="min-h-[44px] justify-center"
           />
           <UButton
             :label="hero.secondaryCta.label"
             :to="hero.secondaryCta.to"
             variant="outline"
             size="xl"
-            class="min-h-11 justify-center"
+            class="min-h-[44px] justify-center"
           />
         </div>
       </div>
@@ -47,16 +63,18 @@ import { site } from '~/data/site'
       <div class="relative">
         <div
           aria-hidden="true"
-          class="absolute -end-3 -bottom-3 size-full rounded-[14px] border-2 border-ouro-400/60"
+          class="intro-frame absolute -end-3 -bottom-3 size-full rounded-[14px] border-2 border-ouro-400/60"
         />
-        <img
-          :src="hero.image.src"
-          :alt="hero.image.alt"
-          :width="hero.image.width"
-          :height="hero.image.height"
-          fetchpriority="high"
-          class="relative aspect-[4/5] h-auto w-full rounded-[10px] object-cover object-bottom shadow-xl dark:brightness-90"
-        >
+        <div class="relative overflow-hidden rounded-[10px] shadow-xl">
+          <img
+            :src="hero.image.src"
+            :alt="hero.image.alt"
+            :width="hero.image.width"
+            :height="hero.image.height"
+            fetchpriority="high"
+            class="intro-settle aspect-[4/5] h-auto w-full object-cover object-bottom dark:brightness-90"
+          >
+        </div>
       </div>
     </UContainer>
   </section>

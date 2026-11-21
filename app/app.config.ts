@@ -9,6 +9,10 @@ export default defineAppConfig({
       error: 'red',
       neutral: 'stone'
     },
+    // Margem lateral maior no celular (28 px), para fotos, vídeo e mapa não encostarem nas bordas da tela
+    container: {
+      base: 'w-full max-w-(--ui-container) mx-auto px-8 sm:px-6 lg:px-8'
+    },
     // Mensagens de erro em vermelho mais escuro, para contraste suficiente sobre branco
     formField: {
       slots: {

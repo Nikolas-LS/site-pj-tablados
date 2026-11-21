@@ -3,21 +3,21 @@ export const trustItems = [
   {
     icon: 'i-lucide-hammer',
     title: 'Fabricação própria',
-    description: 'Tablados feitos na nossa oficina'
+    description: 'Cada peça é feita por nós, do início ao fim'
   },
   {
     icon: 'i-lucide-ruler',
-    title: 'Venda e sob medida',
-    description: 'Prontos ou nas medidas do seu evento'
+    title: 'Pronto ou personalizado',
+    description: 'Você escolhe o formato que combina com o seu ambiente'
   },
   {
     icon: 'i-lucide-globe',
     title: 'Todo o Brasil',
-    description: 'Atendemos eventos em todo o país'
+    description: 'Atendimento de norte a sul do país'
   },
   {
     icon: 'i-lucide-message-circle',
-    title: 'Orçamento pelo WhatsApp',
-    description: 'Fale direto com a nossa equipe'
+    title: 'Contato sem rodeios',
+    description: 'Tire suas dúvidas por mensagem'
   }
 ]

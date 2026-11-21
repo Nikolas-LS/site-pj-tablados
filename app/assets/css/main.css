@@ -115,26 +115,160 @@ h1, h2, h3 {
   font-family: var(--font-display);
 }
 
-/* Entrada suave das seções (diretiva v-reveal): só o conteúdo anima, o fundo da seção fica parado */
-[data-reveal] > * {
-  transition: opacity 0.6s ease-out, translate 0.6s ease-out;
+/* ---------- Efeitos de entrada ----------
+   Ao rolar: diretiva v-reveal (plugins/reveal.ts). O JavaScript marca o elemento com data-reveal="pending" (escondido)
+   e troca para "shown" quando ele entra na tela; depois da animação remove as marcas. data-reveal-fx escolhe o efeito.
+   Na abertura da página (topo): classes intro*, só CSS, com --i dando a ordem. Tudo com movimentos curtos e suaves. */
+:root {
+  --ease-reveal: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-[data-reveal="pending"] > * {
+[data-reveal] {
+  --reveal-x: 0px;
+  --reveal-y: 18px;
+  --reveal-scale: 1;
+  --reveal-opacity: 0;
+  transition:
+    opacity 0.75s var(--ease-reveal),
+    translate 0.75s var(--ease-reveal),
+    scale 0.75s var(--ease-reveal);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+[data-reveal-fx="left"] {
+  --reveal-x: -28px;
+  --reveal-y: 0px;
+}
+
+[data-reveal-fx="right"] {
+  --reveal-x: 28px;
+  --reveal-y: 0px;
+}
+
+/* Colunas empilhadas no celular e no tablet: em vez de deslizar de lado, sobe */
+@media (max-width: 1023px) {
+  [data-reveal-fx="left"],
+  [data-reveal-fx="right"] {
+    --reveal-x: 0px;
+    --reveal-y: 18px;
+  }
+}
+
+[data-reveal-fx="zoom"] {
+  --reveal-y: 0px;
+  --reveal-scale: 0.7;
+}
+
+/* Filete dourado: cresce do centro para as pontas */
+[data-reveal-fx="grow"] {
+  --reveal-y: 0px;
+  --reveal-scale: 0 1;
+  transition-duration: 0.9s;
+}
+
+/* Foto: começa um pouco maior e assenta no tamanho final, sem fade (o cartão em volta já faz o fade) */
+[data-reveal-fx="settle"] {
+  --reveal-y: 0px;
+  --reveal-scale: 1.08;
+  --reveal-opacity: 1;
+  transition-duration: 1.3s;
+}
+
+/* Moldura dourada: sai de trás da foto até a posição final (--frame-x vale -12px para molduras no lado direito) */
+[data-reveal-fx="frame"] {
+  --reveal-x: var(--frame-x, -12px);
+  --reveal-y: -12px;
+  transition-duration: 0.9s;
+}
+
+[data-reveal="pending"]:not([data-reveal-fx="stagger"]) {
+  opacity: var(--reveal-opacity);
+  translate: var(--reveal-x) var(--reveal-y);
+  scale: var(--reveal-scale);
+}
+
+/* Lista: o pai só marca o momento, os filhos surgem um depois do outro (--i é a posição de cada filho) */
+[data-reveal-fx="stagger"] > * {
+  transition:
+    opacity 0.75s var(--ease-reveal),
+    translate 0.75s var(--ease-reveal);
+  transition-delay: calc(var(--i, 0) * 90ms + var(--reveal-delay, 0ms));
+}
+
+[data-reveal="pending"][data-reveal-fx="stagger"] > * {
   opacity: 0;
-  translate: 0 16px;
+  translate: 0 18px;
 }
 
-[data-reveal="shown"] > * {
-  opacity: 1;
-  translate: none;
+/* Abertura da página: só os estados iniciais são descritos ("backwards"); no fim o elemento volta ao estilo normal.
+   A foto principal não faz fade (só assenta), para o carregamento dela não atrasar. */
+@keyframes intro-up {
+  from {
+    opacity: 0;
+    translate: 0 18px;
+  }
+}
+
+@keyframes intro-grow {
+  from {
+    scale: 0 1;
+  }
+}
+
+@keyframes intro-settle {
+  from {
+    scale: 1.08;
+  }
+}
+
+@keyframes intro-frame {
+  from {
+    opacity: 0;
+    translate: var(--frame-x, -12px) -12px;
+  }
+}
+
+@utility intro {
+  animation: intro-up 0.8s var(--ease-reveal) backwards;
+  animation-delay: calc(var(--i, 0) * 90ms + 80ms);
+}
+
+@utility intro-grow {
+  animation: intro-grow 0.9s var(--ease-reveal) backwards;
+  animation-delay: calc(var(--i, 0) * 90ms + 80ms);
+}
+
+@utility intro-settle {
+  animation: intro-settle 1.5s var(--ease-reveal) backwards;
+}
+
+@utility intro-frame {
+  animation: intro-frame 0.9s var(--ease-reveal) backwards;
+  animation-delay: 0.55s;
 }
 
 @media (prefers-reduced-motion: reduce) {
+  [data-reveal],
   [data-reveal] > * {
-    transition: none;
-    opacity: 1;
-    translate: none;
+    transition: none !important;
+    opacity: 1 !important;
+    translate: none !important;
+    scale: none !important;
+  }
+
+  .intro,
+  .intro-grow,
+  .intro-settle,
+  .intro-frame {
+    animation: none;
+  }
+}
+
+/* Celular: base de tamanho de 14 px em vez de 16 px. Textos, espaçamentos, ícones e cards usam rem,
+   então tudo encolhe junto (~12%). As áreas de toque usam px fixos (44 px) e não encolhem. */
+@media (max-width: 639px) {
+  html {
+    font-size: 87.5%;
   }
 }
 

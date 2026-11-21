@@ -20,7 +20,7 @@ useHead({
 })
 
 // Descrição que aparece no Google e ao compartilhar o link. Revisar com os donos.
-const description = 'Tablados de madeira para eventos em todo o Brasil: venda e fabricação sob medida. Peça seu orçamento pelo WhatsApp.'
+const description = 'Tablados de madeira para eventos em todo o Brasil: venda e projetos personalizados. Fale com a PJ Tablados e solicite sua proposta.'
 
 useSeoMeta({
   title: 'PJ Tablados',

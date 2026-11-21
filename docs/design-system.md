@@ -69,7 +69,7 @@ Todas gratuitas no Google Fonts.
 - Cartão de serviço: foto, título, descrição curta e link.
 
 ### Navegação
-- Cabeçalho branco com logo à esquerda, menu enxuto e botão "Pedir orçamento" à direita.
+- Cabeçalho branco com logo à esquerda, menu enxuto e alternador de tema à direita (sem botão de orçamento).
 - Rodapé em verde musgo com contatos, endereço, redes sociais e horário.
 
 ### Seções recomendadas para o site
